@@ -543,15 +543,27 @@ img {
   position: relative;
   overflow: hidden
 }
-.tablet-btn:hover + .accordion-item {
-  background-color: #f15a24;
-  color: #fff
+.accordion-item img.inactive {
+  display: block
+}
+.accordion-item img.active {
+  display: none
 }
 .accordion-item:hover {
   background-color: #f15a24;
   color: #fff;
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0,0,0,.2)
+}
+.accordion-item:hover img.inactive {
+  display: none
+}
+.accordion-item:hover img.active {
+  display: block
+}
+.tablet-btn:hover + .accordion-item {
+  background-color: #f15a24;
+  color: #fff
 }
 .accordion-header {
   display: flex;
