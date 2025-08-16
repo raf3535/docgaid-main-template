@@ -2195,6 +2195,26 @@ img{
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
+
+    img.inactive {
+        display: block;
+    }
+    img.active {
+        display: none;
+    }
+
+    &:hover {
+        background-color: #F15A24;
+        color: white;
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        img.inactive {
+            display: none;
+        }
+        img.active {
+            display: block;
+        }
+    }
 }
 
 .tablet-btn:hover + .accordion-item {
@@ -2203,10 +2223,6 @@ img{
 }
 
 .accordion-item:hover {
-    background-color: #F15A24;
-    color: white;
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .accordion-header {
