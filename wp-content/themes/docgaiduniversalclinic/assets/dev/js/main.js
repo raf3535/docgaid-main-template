@@ -495,3 +495,12 @@ $(document).ready(function() {
     $stickyElement.css('width', $('.image-scroll').width() + 'px');
   }).trigger('resize');
 });
+
+document.querySelectorAll(".accordion-header").forEach(header => {
+  header.addEventListener("click", () => {
+      const item = header.parentElement;
+      item.classList.toggle("active");
+      const content = item.querySelector(".accordion-content");
+      content.style.display = content.style.display === "block" ? "none" : "block";
+  });
+});
