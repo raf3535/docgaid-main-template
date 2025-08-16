@@ -114,6 +114,7 @@ function custom_homepage_content()
                                     }
                                 ?>
                             </ul>
+                            
                         </div>   
                         <div class="col-lg-4 col-12 d-flex align-items-center justify-content-md-center margins-tablet">
                             <div class="images tilt-item">
