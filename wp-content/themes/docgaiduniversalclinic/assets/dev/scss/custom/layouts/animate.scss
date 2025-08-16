@@ -1,0 +1,346 @@
+@function random-translate($min, $max) {
+    $rand: random();
+    $randomNum: $min + floor($rand * (($max - $min) + 1));
+
+    @return $randomNum;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.hidden-hd {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+
+    &.no-animation-mobile {
+        @media (max-width: 768px) {
+            opacity: 1 !important;
+            transform: none !important;
+            transition: none !important;
+        }
+    }
+
+    &-hero {
+        transition: opacity 1s ease-out, transform 1s ease-out;
+        opacity: 0;
+    }
+
+    &-right {
+        transform: translateX(100px);
+
+        &-hero {
+            transform: translateX(800px);
+
+            @include xs {
+                transform: translateX(300px);
+            }
+        }
+    }
+
+    &-left {
+        transform: translateX(-100px);
+
+        &-hero {
+            transform: translateX(-800px);
+
+            @include xs {
+                transform: translateX(-300px);
+            }
+        }
+    }
+
+    &-up {
+        transform: translateY(-100px);
+    }
+
+    &-up-200 {
+        transform: translateY(-200px);
+    }
+
+    &-up-300 {
+        transform: translateY(-300px);
+    }
+
+    &-up-400 {
+        transform: translateY(-400px);
+    }
+
+    &-timeout-100 {
+        transform: translateY(-100px);
+    }
+
+    &-timeout-200 {
+        transform: translateY(-200px);
+    }
+
+    &-timeout-300 {
+        transform: translateY(-300px);
+    }
+
+    &-timeout-400 {
+        transform: translateY(-400px);
+    }
+
+    &-timeout-500 {
+        transform: translateY(-500px);
+    }
+
+    &-timeout-600 {
+        transform: translateY(185px);
+    }
+
+    &-timeout-up-300 {
+        animation-delay: 1s;
+        transform: translateY(300px);
+    }
+}
+
+.hidden-hd-right-hero-rotate {
+    transform: translateX(800px) rotate(-20deg);
+    opacity: 0;
+
+    &.show {
+        animation: rotate-move-left 1.5s ease-out forwards;
+    }
+
+    @include xs {
+        transform: translateX(300px) rotate(-20deg);
+    }
+}
+
+.show {
+    &:not(.hidden-rotate):not(.hidden-arrow):not(.hidden-fly):not(.hidden-arrows):not(.hidden-items):not(.home-guide-torch):not(.love-up):not(.hidden):not(.hidden-hd-right-hero-rotate) {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+}
+
+@keyframes rotate-move-left {
+    0% {
+        transform: translateX(800px) rotate(100deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0) rotate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes hidden-arrow {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes fly-away-right {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(random-translate(-10px, -100px), // Random horizontal
+                random-translate(-100px, -200px) // Random vertical
+            );
+        opacity: 0;
+    }
+}
+
+@keyframes fly-away-left {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(random-translate(10px, 100px), // Random horizontal
+                random-translate(-100px, -200px) // Random vertical
+            );
+        opacity: 0;
+    }
+}
+
+@keyframes fly-away-up {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(random-translate(0, 0), // Random horizontal
+                random-translate(-200px, -300px) // Random vertical
+            );
+        opacity: 0;
+    }
+}
+
+@keyframes arrows-up {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-1375px);
+        opacity: 0;
+    }
+}
+
+@keyframes rotate-items {
+    0% {
+        transform: rotate(-20deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes moveButton {
+    0% {
+        transform: translate(9px, -31px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes opacityLight {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: .5;
+    }
+}
+
+@keyframes rotate-torch {
+    0% {
+        transform: rotate(-15deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes scroll-custom {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-90%);
+    }
+}
+
+@keyframes arrowFly {
+    0% {
+        transform: translate(1054px, -502px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes grow {
+    0% {
+        bottom: 300px;
+    }
+
+    100% {
+        bottom: 500px;
+    }
+}
+
+@keyframes growAfter {
+    0% {
+        height: 42px;
+    }
+
+    100% {
+        height: 242px;
+    }
+}
+
+@keyframes draw {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 178px;
+    }
+}
+
+@include lg {
+    @keyframes draw {
+        0% {
+            width: 0;
+        }
+
+        100% {
+            width: 120px;
+        }
+    }
+}
+
+@include sm {
+    @keyframes draw {
+        0% {
+            width: 0;
+        }
+
+        100% {
+            width: 90px;
+        }
+    }
+}
+
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: transparent;
+    }
+}

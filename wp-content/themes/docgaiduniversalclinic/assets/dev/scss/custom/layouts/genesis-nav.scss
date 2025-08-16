@@ -1,0 +1,360 @@
+// TODO Genesis Navigation - Styles
+
+.genesis-nav-menu {
+  width: 100%;
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 45px;
+
+  @include lg {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  a[href="#"] {
+    cursor: default;
+  }
+
+  li {
+    position: relative;
+    list-style-type: none;
+
+    a {
+      font-family: map-get($menu-desktop, font-family);
+      cursor: pointer;
+    }
+  }
+
+  >li {
+    position: relative;
+    z-index: 2;
+
+    @media (min-width: 1200px) {
+      margin: 0 5px;
+
+      &:hover::after {
+        pointer-events: initial;
+      }
+
+      &::after {
+        @include size(100%, 10px);
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        display: block;
+        pointer-events: none;
+      }
+    }
+
+    @include lg {
+      width: 100%;
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      >a {
+        color: $baseWhite;
+
+        @include lg {
+          color: map-get($menu-mobile, link-color);
+        }
+      }
+    }
+
+    >a {
+      padding: 8px 0;
+      font-family: $robotoFont;
+      color: $baseWhite;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 20px;
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      letter-spacing: 0;
+
+      @include lg {
+        color: map-get($menu-mobile, link-color);
+        font-size: map-get($menu-mobile, link-font-size);
+        font-weight: map-get($menu-mobile, link-font-weight);
+        text-transform: map-get($menu-mobile, link-text-transform);
+        letter-spacing: map-get($menu-mobile, link-letter-spacing);
+        padding: 15px;
+        display: inline-block;
+        width: 100%;
+        justify-content: flex-start;
+        background-color: transparent;
+      }
+
+      &:hover {
+        color: $baseThirdly;
+      }
+    }
+  }
+
+  li.menu-item-has-children {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 45%;
+      transform: translateY(-50%) rotate(-45deg);
+      right: 15px;
+      z-index: 1;
+      pointer-events: none;
+      @include size(10px);
+      border: solid $baseWhite;
+      border-width: 0 map-get($menu-desktop, link-arrow-weight) map-get($menu-desktop, link-arrow-weight) 0;
+      display: inline-block;
+      padding: 2px;
+      transition: $transition;
+
+      @include lg {
+        border: solid map-get($menu-mobile, link-color);
+        border-width: 0 map-get($menu-mobile, link-arrow-weight) map-get($menu-mobile, link-arrow-weight) 0;
+        transform: rotate(45deg);
+        top: 17px;
+        right: 23px;
+      }
+    }
+
+    >a {
+      @include lg {
+        width: max-content;
+      }
+    }
+  }
+
+  >li.current-menu-item {
+    >a {
+      color: map-get($menu-desktop, link-hover);
+
+      @include lg {
+        color: map-get($menu-mobile, link-active);
+      }
+
+      &:hover {
+        color: map-get($menu-desktop, link-hover);
+
+        @include lg {
+          color: map-get($menu-mobile, link-active);
+        }
+      }
+    }
+  }
+
+  >li.menu-item-has-children {
+    @media (min-width: 1200px) {
+      margin: 0 25px 0 5px;
+
+      &:hover>ul {
+        opacity: 1;
+        pointer-events: initial;
+        transform: translateY(0);
+      }
+
+      li.menu-item-has-children {
+        &:hover>ul {
+          opacity: 1;
+          pointer-events: initial;
+          transform: translateY(0);
+        }
+      }
+    }
+
+    @media (min-width: 1400px) {
+      margin: 0 25px 0 15px;
+    }
+
+    &::before {
+      transform: translateY(-45%) rotate(45deg) scale(.7);
+      right: -15px;
+
+      @include lg {
+        transform: rotate(45deg);
+        top: 17px;
+        right: 23px;
+      }
+    }
+
+    &:hover::before {
+      @media (min-width: 1200px) {
+        top: 55%;
+        transform: translateY(-45%) rotate(-135deg) scale(.7);
+      }
+    }
+  }
+
+  .sub-menu {
+    padding: 10px 0 10px 30px;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 10px);
+    width: 400px;
+    opacity: 0;
+    pointer-events: none;
+    flex-wrap: wrap;
+    background-color: map-get($sub-menu, background);
+    box-shadow: map-get($sub-menu, box-shadow);
+    z-index: -1;
+    transition: $transition;
+    transform: translateY(10px);
+    background-color: $polsonNavy;
+
+    &:first-child {
+      background-color: red !important;
+    }
+
+    @include lg {
+      height: auto;
+      pointer-events: initial;
+      background-color: map-get($menu-mobile, background);
+      border-bottom: none;
+      padding: 0 0 10px 10px;
+      margin: 0;
+      box-shadow: none;
+      position: static;
+      width: 100%;
+      visibility: visible;
+      opacity: 1;
+      display: none;
+      top: initial;
+      left: initial;
+      transform: initial;
+      transition: initial;
+    }
+
+    li {
+      position: relative;
+
+      &::after {
+        content: '\2022';
+        font-size: 16px;
+        position: absolute;
+        left: -12px;
+        color: $baseWhite;
+        top: 11px;
+      }
+
+      @media (min-width: 1200px) {
+        width: 100%;
+
+        &:first-child {
+          margin-top: 10px;
+        }
+
+        &:last-child {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    li.menu-item-has-children {
+
+      @include min-lg {
+        text-decoration: underline;
+      }
+
+      &::before {
+        top: 25px;
+        right: 10px;
+        border: solid $baseWhite;
+        border-width: 0 map-get($sub-menu, link-arrow-weight) map-get($sub-menu, link-arrow-weight) 0;
+        @include size(8px);
+
+        @include lg {
+          border-width: 0 map-get($menu-mobile, link-arrow-weight) map-get($menu-mobile, link-arrow-weight) 0;
+          border-color: map-get($menu-mobile, link-color);
+          right: 22px;
+          top: 15px;
+        }
+      }
+    }
+
+    li.current-menu-item {
+      >a {
+        color: map-get($sub-menu, link-hover);
+      }
+    }
+
+    a {
+      cursor: pointer;
+      width: 100%;
+      padding: 8px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $baseWhite;
+      text-transform: map-get($sub-menu, link-text-transform);
+      font-weight: 700;
+      font-family: $robotoFont;
+      border: none;
+      line-height: 34px;
+      letter-spacing: map-get($sub-menu, link-letter-spacing);
+      font-size: 16px;
+
+      &:hover {
+        @media (min-width: 1200px) {
+          color: map-get($sub-menu, link-hover);
+          text-decoration: underline;
+        }
+      }
+
+      @include lg {
+        font-size: map-get($menu-mobile, sub-link-font-size);
+        color: map-get($menu-mobile, link-color);
+        font-weight: map-get($menu-mobile, sub-link-font-weight);
+        text-transform: map-get($menu-mobile, sub-link-text-transform);
+        letter-spacing: map-get($menu-mobile, sub-link-letter-spacing);
+        width: 100%;
+        padding: 15px;
+
+        &:hover {
+          color: map-get($menu-mobile, link-color);
+        }
+      }
+    }
+
+    .sub-menu {
+      box-shadow: unset;
+      width: 400px;
+      top: -20px;
+      left: 100%;
+      margin: 0;
+      z-index: 10;
+      padding-left: 50px;
+
+      @include lg {
+        width: 100%;
+      }
+
+      li {
+        width: 100%;
+
+        a {
+          padding: 5px 10px;
+        }
+      }
+
+      @include lg {
+        display: none;
+        top: initial;
+        left: initial;
+      }
+    }
+  }
+}

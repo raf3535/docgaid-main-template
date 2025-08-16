@@ -1,0 +1,113 @@
+// TODO Widget Title Scroll - Styles
+
+body:not(.home) {
+  &.admin-bar {
+    .content-sidebar-wrap {
+      #blogSidebar.sidebar-active {
+        top: map-get($widget-titles, position-start-top-admin-bar);
+      }
+
+      #blogSidebar.sidebar-active-bottom {
+        bottom: map-get($widget-titles, position-stop-bottom-admin-bar);
+        top: initial;
+      }
+    }
+  }
+
+  .blogSidebar {
+    display: flex;
+    flex-direction: column;
+    width: calc(#{map-get($widget-titles, width)} - 15px);
+    position: absolute;
+    top: 0;
+    z-index: 2;
+
+    @include xxl {
+      width: calc(#{map-get($widget-titles, width-xxl)} - 15px);
+    }
+
+    @include lg {
+      display: none;
+    }
+
+    &-main {
+      width: 100%;
+    }
+
+    div.contents {
+      color: $baseWhite;
+      font-family: $titleFont;
+      font-size: 38px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 47.5px;
+      letter-spacing: -0.76px;
+      text-transform: capitalize;
+      position: relative;
+      padding-bottom: 10px;
+
+      &::before {
+        content: '';
+        background-color: $ctaColor;
+        width: 142px;
+        height: 1px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+    }
+
+    ol {
+      padding: 0;
+      margin: 0;
+
+      li {
+        list-style-type: none;
+        margin-bottom: 15px;
+
+        &:first-child {
+          margin-top: 15px;
+        }
+      }
+    }
+
+    span {
+      color: $baseWhite;
+      font-family: $baseFont;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+
+      &:hover {
+        font-weight: 700;
+      }
+    }
+
+    .scrollToElements.active {
+      font-weight: 700;
+    }
+  }
+
+  #blogSidebar.sidebar-active {
+    position: fixed;
+    top: map-get($widget-titles, position-start-top);
+  }
+
+  #blogSidebar.sidebar-active-bottom {
+    position: absolute;
+    bottom: map-get($widget-titles, position-stop-bottom);
+    top: initial;
+  }
+
+  .toc-active {
+    padding-left: map-get($widget-titles, width);
+
+    @include xxl {
+      padding-left: map-get($widget-titles, width-xxl);
+    }
+
+    @include lg {
+      padding-left: 0;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+
+// Base Colors
+$baseWhite: #ffffff;
+$baseBlack: #000000;
+$baseGray: #f1f1f1f1;
+$baseButtons: #9D1121;
+$baseTitles: #E2334A;
+$baseSubtitle: #570000;
+$baseSecondSubtitle: #DE1630;
+$baseSecondary: #244692;
+$baseText: #444444;
+
+// base font
+$baseFont: "Poppins", sans-serif;
+
+// must be removed
+$basePrimary: #333;
+$baseThirdly: #333;
+$baseFourthly: #333;
+$polsonBlue: #0F1E7E;
+$polsonNavy: #0C2349;
+$gray: #ECECEC;
+$red: #FF0000;
+$ctaColor: #D3AC15;
+$baseFont1: 'Source Sans Pro', sans-serif;
+$titleFont1: 'Montserrat', sans-serif;
+$signFont1: "Meie Script", sans-serif;
+$robotoFont1: "Roboto", sans-serif;
+$interFont1: "Inter", sans-serif;
+// TODO Base transitions
+$transition: all .3s ease-in-out;
+
+// TODO Base Text Shadow
+$shadowText: 2px 2px 0 #020202, 0 0 57px rgba(0, 0, 0, .2);
+$shadowBox: 0 0 8px 0 rgba(34, 60, 80, 0.2);
+
+// TODO Layouts Variables
+// @import "variables/layouts/header";
+// @import "variables/layouts/breadcrumbs";
+// @import "variables/layouts/buttons";
+// @import "variables/layouts/hero";
+// @import "variables/layouts/content-sidebar-wrap";
+// @import "variables/layouts/entry-content";
+// @import "variables/layouts/cta";
+// @import "variables/layouts/widget-default";
+// @import "variables/layouts/widget-faqs";
+// @import "variables/layouts/widget-title-scroll";
+// @import "variables/layouts/widgets-cta-attorney";
+// @import "variables/layouts/sidebar-form";
+// @import "variables/layouts/related-articles";
+// @import "variables/layouts/pagination";
+// @import "variables/layouts/address-shortcode";
+
+// // TODO Templates Variables
+// @import "variables/templates/blog-archive-search";
+// @import "variables/templates/page-faqs";

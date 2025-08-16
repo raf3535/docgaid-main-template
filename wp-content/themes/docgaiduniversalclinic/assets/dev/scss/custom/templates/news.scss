@@ -1,0 +1,45 @@
+.news {
+    .title {
+        color: $baseWhite;
+        font-family: $titleFont;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 60px;
+        letter-spacing: -0.48px;
+
+        @include lg {
+            font-size: 36px;
+            line-height: 45px;
+            letter-spacing: -0.36px;
+        }
+    }
+
+    .description {
+        color: $baseWhite;
+    }
+
+    &-card * {
+        color: $baseWhite;
+    }
+
+    &-card {
+        box-shadow: 0 0 8px 0 rgba(255, 255, 255, .2);
+        padding: 10px;
+        margin-bottom: 15px;
+        padding: 20px;
+
+        img {
+            max-height: 400px;
+            object-fit: contain;
+        }
+
+        .btn-global {
+
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
