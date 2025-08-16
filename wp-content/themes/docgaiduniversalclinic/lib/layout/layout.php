@@ -66,6 +66,6 @@ add_action('init', function () {
 /* Adding additional main wrapper*/
 add_filter('genesis_attr_site-inner', 'add_to_inner');
 function add_to_inner($attributes) {
-	$attributes['class'] .= ' main-wrap overflow-hidden';
+	$attributes['class'] .= ' main-wrap';
 	return $attributes;
 }

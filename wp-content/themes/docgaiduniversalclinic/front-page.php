@@ -24,31 +24,61 @@ function custom_homepage_content()
     $tablet_small = get_sub_field('tablet_small');
 
 ?>
-    <div class="section-mehr-top">
-    
-     <div class="container">
-         <div class="row align-items-center justify-content-md-center">
-             <div class="col-lg-6 col-12">
-                 <div class="in-col-textes text-center">
+    <div class="hero-front-page">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="in-col-textes text-center">
                     <p class="sub-title-top"><?= $innovation_subtitle; ?></p>
-                    <p class="title-top"><?= $innovation_title; ?></p>
-                     <p class="title-top">
-                        Mehr <span class="orange-tt"> Innovation,</span><br> Mehr <span class="orange-tt">Organisation</span>
-                     </p>
-                     <div class="border-top-sm"></div>
-                 </div>
-                 <div class="test-uns-button d-flex justify-content-between align-items-center">
-						<p>Kontaktieren Sie uns jetzt !</p>
-						<div class="round-button">
-							<div class="round-button-inner-button">
-								<img loading="lazy" data-lazy="https://docgaid.de/wp-content/uploads/2022/10/icons8-right-1.svg" src="https://docgaid.de/wp-content/uploads/2022/10/icons8-right-1.svg">
-							</div>
-						</div>
-					</div>
-             </div>
-             
-     </div>
- </div>
+                    <img src="<?= CHILD_URL ?>/assets/app/svg/line-subtitle.svg">
+
+                    <p class="title-top">
+                        Mehr <span class="orange-tt"> Innovation,</span>
+                        <br> Mehr <span class="orange-tt">Organisation</span>
+                    </p>
+                </div>
+                <div class="test-uns-button d-flex justify-content-between align-items-center">
+                    <p>Kontaktieren Sie uns jetzt !</p>
+                    <div class="round-button">
+                        <div class="round-button-inner-button">
+                            <img loading="lazy" data-lazy="https://docgaid.de/wp-content/uploads/2022/10/icons8-right-1.svg" src="https://docgaid.de/wp-content/uploads/2022/10/icons8-right-1.svg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flexx wrapper">
+                <div class="image-statistic">
+                    <img src="<?= CHILD_URL ?>/assets/app/img/tablet-hero-1.png" alt="">
+                    <div class="stat-box text-center">
+                        <p class="stat-main">7511€</p>
+                        <p class="stat-info">Ihr Kostenvorteil pro Jahr</p>
+                    </div>
+                    <div class="stat-box text-center">
+                        <p class="stat-main">374H</p>
+                        <p class="stat-info">Ihr Zeitersparnis pro Jahr</p>
+                    </div>
+                </div>
+                <div class="image-scroll">
+                    <div class="sticky-wrap">
+                        <img src="<?= CHILD_URL ?>/assets/app/img/tablet-main-hero.png" alt="">
+                    </div>
+                </div>
+                <div class="image-statistic">
+                    <img class="image-statistic-right" src="<?= CHILD_URL ?>/assets/app/img/tablet-hero-3.png" alt="">
+                    <div class="stat-box text-center">
+                        <p class="stat-main">2020</p>
+                        <p class="stat-info">Gründungsidee</p>
+                    </div>
+                    <div class="stat-box text-center">
+                        <p class="stat-main">3H</p>
+                        <p class="stat-info">Auftragsbearbeitung</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
  <div class="number-datas">
      <div class="container-fluid p-0 m-0">
          <div class="text-center text-numbers-top d-flex justify-content-center">

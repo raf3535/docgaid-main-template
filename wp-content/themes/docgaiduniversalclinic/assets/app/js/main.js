@@ -449,6 +449,52 @@ $(document).ready(function() {
     },
   });
 });
+
+
+$(document).ready(function() {
+  const $stickyElement = $('.sticky-wrap');
+  const $wrapper = $('.wrapper');
+  const originalOffset = $stickyElement.offset().top - 20; // 20px padding
+  const stickyHeight = $stickyElement.outerHeight();
+  const wrapperHeight = $wrapper.outerHeight();
+  const wrapperOffset = $wrapper.offset().top;
+  const stopPosition = wrapperOffset + wrapperHeight - stickyHeight - 20; // 20px buffer
+
+  $(window).scroll(function() {
+    const scrollPosition = $(window).scrollTop();
+    
+    if (scrollPosition >= originalOffset && scrollPosition <= stopPosition) {
+      $stickyElement.css({
+        'position': 'fixed',
+        'top': '100px',
+        'width': $stickyElement.width() + 'px'
+      });
+    } 
+    else if (scrollPosition > stopPosition) {
+      $stickyElement.css({
+        'position': 'absolute',
+        'top': stopPosition - wrapperOffset + 'px',
+        'width': $stickyElement.width() + 'px'
+      });
+    }
+    else {
+      $stickyElement.css({
+        'position': 'relative',
+        'top': 'auto',
+        'width': 'auto'
+      });
+    }
+  });
+
+  $(window).resize(function() {
+    // Recalculate dimensions on resize
+    const newWrapperHeight = $wrapper.outerHeight();
+    const newWrapperOffset = $wrapper.offset().top;
+    stopPosition = newWrapperOffset + newWrapperHeight - stickyHeight - 20;
+    
+    $stickyElement.css('width', $('.image-scroll').width() + 'px');
+  }).trigger('resize');
+});
 (function ($) {
 
     // TODO AOS Scrollable animation init
