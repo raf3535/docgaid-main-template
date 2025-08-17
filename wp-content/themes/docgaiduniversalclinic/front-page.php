@@ -23,6 +23,14 @@ function custom_homepage_content()
     $title_doctors= get_field('title_doctors');
     $text_doctors = get_field('text_doctors');
     $button_text = get_field('button_text');
+    $assistant_image = get_field('assistant_image');
+    $title_assistant = get_field('title_assistant');
+    $subtitle_assistant = get_field('subtitle_assistant');
+    $consulting_title = get_field('consulting_title');
+    $partner_title = get_field('partner_title');
+    $partner_content = get_field('partner_content');
+    $faq_title = get_field('faq_title');
+    $contact_img = get_field('contact_img');
 
 ?>
     <div class="hero-front-page">
@@ -324,142 +332,99 @@ function custom_homepage_content()
  </section>
  <section class="assistant-section" id="assistant-section">
      <div class="container">
-         <div class="m-auto">
-             <div class="text-center">
-                 <p class="title-numbers-top color-or">DEIN DIGITALER ASSISTENT</p>
-                 <div class="span-bordered-mid span-bordered">
-                     <p class="span-text-top text-white">UPGRADE DEINEN ARBEITSPLATZ</p>
-                 </div>
-             </div>
-         </div>
-         <div class="row justify-content-around">
+         <div class="row justify-content-center">
+            <div class="col-lg-6 col-12">
+                <img src="<?= $assistant_image['url']; ?>" alt="<?= $assistant_image['alt']; ?>" class="w-100">
+            </div>
              <div class="col-lg-6 col-12">
-                 <div class="asist-textes left-text">
-                     <p class="title-not-gradient text-uppercase">DocGaid passt sich Deiner Praxis an. Was heißt das genau?</p>
-                     <p class="sub-praxis">Patientenbindung, Individualität, Rechtskonformität, Validierung etc.</p>
-                     <ul>
-                         <li>Unser Team hat DocGaid so entwickelt, dass wir die Möglichkeit haben, sie an Deine Praxis und Dein Team anzupassen.</li>
-                         <li>Wir gestalten Dir Deine Anamnese nicht nur in deutscher Sprache, sondern auch in Englisch oder Russisch. So fühlt sich jeder Patient willkommen.</li>
-                         <li>Auf unseren Unterlagen fügen wir Dein Logo und Deine Initialen hinzu, oder wir binden Deine Dokumente nahtlos in die App nur für Dich mit ein.</li>
-                         <li>Das ist ein Riesen-Vorteil für Dich und Deine Assistenz, denn so musst Du Dich auf keine neue Dokumentation oder Unterlagen einstellen. Da Du Deine eigenen Schreiben mit einem Klick gebunden auf dem iPad findest, ermöglicht es Dir eine viel effektiveres, organisiertes und stressfreies Arbeiten.</li>
-                     </ul>
+                <div class="asist-textes left-text">
+                    <p class="title-numbers-top"><?=$title_assistant ?></p>
+                    <div class="span-bordered-mid span-bordered" style="margin-left:0px;">
+                        <p class="span-text-top text-white text-center"><?=$subtitle_assistant ?></p>
+                    </div>
+                    <p class="title-not-gradient text-uppercase">DocGaid passt sich Deiner Praxis an. Was heißt das genau?</p>
+                    <p class="sub-praxis">Patientenbindung, Individualität, Rechtskonformität, Validierung etc.</p>
+                    <hr class="gradient-break">
+                    <?php while(have_rows('assistant_items')): the_row(); ?>
+                        <div class="items-assistant d-flex">
+                            <p class="number-big-as"><?php the_sub_field('number_assistant'); ?></p>
+                            <p class="text-assistant"><?php the_sub_field('text_assistant'); ?></p>
+                        </div>
+                        <hr class="assistant-hr">
+                    <?php endwhile; ?>
                  </div>
              </div>
-             <div class="col-lg-4 col-12 tablet-assistant">
-                 <div class="assistant-images">
-                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/rotated-tablet-assist.png" alt="Tablet Assist" class="tablet-assist">
-                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/assistant.png" alt="assistant-img" class="assistant-img">
-                 </div>
-             </div>
-             <div class="col-lg-2">
-                 <img src="<?= site_url() ?>/wp-content/uploads/2025/07/vertical-orange-1-2.png" alt="vertical-orange" class="all-minus-img">
-             </div>
-             <img src="<?= site_url() ?>/wp-content/uploads/2025/07/dotted-2.png" alt="Dotted rotate" class="dotted-rotated left-one">
-             <img src="<?= site_url() ?>/wp-content/uploads/2025/07/dotted-2.png" alt="Dotted rotate" class="dotted-rotated right-one">
          </div>
      </div>
  </section>
  <section class="consulting-section">
      <div class="container my-5">
-         <div class="m-auto">
-             <div class="text-center">
-                 <p class="title-numbers-top color-or">DEIN DIGITALER ASSISTENT</p>
-             </div>
-         </div>
-         <div class="row">
-             <div class="col-lg-4 col-10">
-                 <div class="custom-card">
-                     <div class="card-header bordered-header">
-                         <i class="fa fa-comments"></i>
-                     </div>
-                     <div class="card-body">
-                         <h5>KOSTENLOSES ERSTGESPRÄCH</h5>
-                         <p>In Einem Ersten Unverbindlichen Telefonat Klären Wir Deine Fragen Und Beraten Dich Zur Bestmöglichen Vorgehensweise</p>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-lg-4 col-10">
-                 <div class="custom-card">
-                     <div class="card-header bordered-header">
-                         <i class="fa fa-calendar"></i>
-                     </div>
-                     <div class="card-body">
-                         <h5>KOSTENLOSES ERSTGESPRÄCH</h5>
-                         <p>In Einem Ersten Unverbindlichen Telefonat Klären Wir Deine Fragen Und Beraten Dich Zur Bestmöglichen Vorgehensweise</p>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-lg-4 col-10">
-                 <div class="custom-card">
-                     <div class="card-header bordered-header">
-                         <i class="fas fa-clock"></i>
-                     </div>
-                     <div class="card-body">
-                         <h5>KOSTENLOSES ERSTGESPRÄCH</h5>
-                         <p>In Einem Ersten Unverbindlichen Telefonat Klären Wir Deine Fragen Und Beraten Dich Zur Bestmöglichen Vorgehensweise</p>
-                     </div>
-                 </div>
-             </div>
-         </div>
-         <img src="<?= site_url() ?>/wp-content/uploads/2025/07/cards-orange.png" alt="orange-consult" class="orange-circle-img">
+        <div class="m-auto">
+            <div class="text-center">
+                <p class="title-numbers-top"><?= $consulting_title ?></p>
+            </div>
+        </div>
+        <div class="row">
+            <?php while(have_rows('consulting_block')): the_row(); ?>
+                <div class="col-lg-4 col-10">
+                    <div class="custom-card">
+                        <div class="card-header bordered-header">
+                        <?php $consulting_image = get_sub_field('consulting_image'); if($consulting_image) { ?>
+                            <img src="<?= $consulting_image['url']; ?>" alt="<?= $consulting_image['alt']; ?>" class="icons-consulting">
+                        <?php } ?>
+                        </div>
+                        <div class="card-body">
+                            <h5><?php the_sub_field('consulting_name'); ?></h5>
+                            <p>In Einem Ersten Unverbindlichen Telefonat Klären Wir Deine Fragen Und Beraten Dich Zur Bestmöglichen Vorgehensweise</p>
+                        </div>
+                    </div>
+                </div>  
+            <?php endwhile; ?> 
+        </div>
      </div>
  </section>
- <section class="questions-accordion">
+ <section class="partners">
      <div class="container">
-         <h2 class="faq-title">HÄUFIG GESTELLTE FRAGEN:</h2>
-         <div class="faq-accordion">
-             <div class="faq-item">
-                 <div class="faq-header">
-                     Funktioniert Nelly Auch Mit Meinem Praxisverwaltungssystem?
-                     <span class="faq-icon">&#9660;</span>
-                 </div>
-                 <div class="faq-content">
-                     Ja, Nelly ist Dank seiner Schnittstellen mit jedem Praxisverwaltungssystem kompatibel. Mit Hilfe dieser Schnittstellen können Bilder und Dokumente direkt in der Patientenakte hinterlegt werden. Für mehr Informationen zur Schnittstellenkompatibilität Ihrer Praxissoftware und Nelly, empfehlen wir ein kostenfreies Beratungsgespräch mit einem unserer Nelly-Experten.
-                 </div>
-             </div>
-             <div class="faq-item">
-                 <div class="faq-header">
-                     Müssen sich Patienten für die Nutzung eine App herunterladen?
-                     <span class="faq-icon">&#9660;</span>
-                 </div>
-                 <div class="faq-content">
-                     Ja, Nelly ist Dank seiner Schnittstellen mit jedem Praxisverwaltungssystem kompatibel. Mit Hilfe dieser Schnittstellen können Bilder und Dokumente direkt in der Patientenakte hinterlegt werden. Für mehr Informationen zur Schnittstellenkompatibilität Ihrer Praxissoftware und Nelly, empfehlen wir ein kostenfreies Beratungsgespräch mit einem unserer Nelly-Experten.
-                 </div>
-             </div>
-             <div class="faq-item">
-                 <div class="faq-header">
-                     Müssen sich Patienten für die Nutzung eine App herunterladen?
-                     <span class="faq-icon">&#9660;</span>
-                 </div>
-                 <div class="faq-content">
-                     Ja, Nelly ist Dank seiner Schnittstellen mit jedem Praxisverwaltungssystem kompatibel. Mit Hilfe dieser Schnittstellen können Bilder und Dokumente direkt in der Patientenakte hinterlegt werden. Für mehr Informationen zur Schnittstellenkompatibilität Ihrer Praxissoftware und Nelly, empfehlen wir ein kostenfreies Beratungsgespräch mit einem unserer Nelly-Experten.
-                 </div>
-             </div>
-             <div class="faq-item">
-                 <div class="faq-header">
-                     Müssen sich Patienten für die Nutzung eine App herunterladen?
-                     <span class="faq-icon">&#9660;</span>
-                 </div>
-                 <div class="faq-content">
-                     Ja, Nelly ist Dank seiner Schnittstellen mit jedem Praxisverwaltungssystem kompatibel. Mit Hilfe dieser Schnittstellen können Bilder und Dokumente direkt in der Patientenakte hinterlegt werden. Für mehr Informationen zur Schnittstellenkompatibilität Ihrer Praxissoftware und Nelly, empfehlen wir ein kostenfreies Beratungsgespräch mit einem unserer Nelly-Experten.
-                 </div>
-             </div>
-             <div class="faq-item">
-                 <div class="faq-header">
-                     Müssen sich Patienten für die Nutzung eine App herunterladen?
-                     <span class="faq-icon">&#9660;</span>
-                 </div>
-                 <div class="faq-content">
-                     Ja, Nelly ist Dank seiner Schnittstellen mit jedem Praxisverwaltungssystem kompatibel. Mit Hilfe dieser Schnittstellen können Bilder und Dokumente direkt in der Patientenakte hinterlegt werden. Für mehr Informationen zur Schnittstellenkompatibilität Ihrer Praxissoftware und Nelly, empfehlen wir ein kostenfreies Beratungsgespräch mit einem unserer Nelly-Experten.
-                 </div>
-             </div>
-         </div>
-     </div>
+        <div class="in-partner-div d-flex justify-content-center text-center">
+            <div class="textes-center">
+                <p class="title-partner text-uppercase"><?= $partner_title ?></p>
+                <p class="sm-partner-text">Wir glauben, dass jeder ein effizienteres, transparenteres und zugänglicheres Gesundheitssystem verdient. Indem wir auf Interoperabilität setzen und traditionelle Prozesse digitalisieren, entlasten wir das Fachpersonal und verbessern das Patientenerlebnis. Unsere Kooperationspartner unterstützen uns auf dieser Mission.Wir glauben, dass jeder ein effizienteres, transparenteres und zugänglicheres Gesundheitssystem verdient. </p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-12 margin-carousel">
+                <!-- <div id="reviewCarousel2" class="carousel slide" data-bs-ride="carousel" data-bs-interval="40000000000"> -->
+
+                <!-- 
+                <div class="carousel-indicators carousel-minus-margin custom-indicators bottom-indicators">
+                    <button type="button" data-bs-target="#reviewCarousel2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 3" style="background-color: black;"></button>
+                    <button type="button" data-bs-target="#reviewCarousel2" data-bs-slide-to="1" aria-label="Slide 4" style="background-color: black;"></button>
+                    <button type="button" data-bs-target="#reviewCarousel2" data-bs-slide-to="2" aria-label="Slide 5" style="background-color: black;"></button>
+                </div> 
+                -->
+            
+                <div class="carousel-inner mobile-margin">
+                    <div class="carousel-item active" style="display: flex; justify-content: center;">
+                        <div class="row justify-content-center">
+                            <div class="non-d-partners">
+                                <?php while (have_rows('partner_images')) : the_row(); ?>
+                                <?php $partner_single_img = get_sub_field('partner_single_img'); if($consulting_image) { ?>
+                                    <img src="<?= $partner_single_img['url']; ?>" alt="<?= $partner_single_img['alt']; ?>" class="icons-consulting">
+                                <?php } ?>
+                                <?php endwhile; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
  </section>
  <section class="comment-section">
      <div class="container mt-5">
          <h2 class="text-center faq-title">GOOGLE UND KUNDENREZENSIONEN</h2>
-         <div id="reviewCarousel1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+         <div id="reviewCarousel1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000000">
 
              <div class="carousel-indicators custom-indicators margin-ind">
                  <button type="button" data-bs-target="#reviewCarousel1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" style="background-color: black;"></button>
@@ -467,332 +432,112 @@ function custom_homepage_content()
                  <button type="button" data-bs-target="#reviewCarousel1" data-bs-slide-to="2" aria-label="Slide 3" style="background-color: black;"></button>
              </div>
  
-         <div id="reviewCarousel1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-             <div class="carousel-inner">
-                 <div class="carousel-item active">
-                     <div class="row justify-content-center">
-                         <div class="col-xl-3 col-lg-10 col-12">
-                             <div class="review-card">
-                                 <div class="d-flex justify-content-between">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/commenter.png" class="rounded-circle me-2" alt="User">
-                                     <div>
-                                         <strong>Julia Hoffmann</strong><br>
-                                         <small>vor 2 Monaten</small>
-                                     </div>
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/outline.png" alt="outline" class="small-images">
-                                 </div>
-                                 <div class="mt-2">
-                                     <span class="text-warning">★★★★★</span>
-                                     <p class="review-text">Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen! Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen!</p>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-xl-3 col-lg-10 col-12">
-                             <div class="review-card">
-                                 <div class="d-flex justify-content-between">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07//commenter.png" class="rounded-circle me-2" alt="User">
-                                     <div>
-                                         <strong>Julia Hoffmann</strong><br>
-                                         <small>vor 2 Monaten</small>
-                                     </div>
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/monochrome.png" alt="google" class="small-images">
-                                 </div>
-                                 <div class="mt-2">
-                                     <span class="text-warning">★★★★★</span>
-                                     <p class="review-text">Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen! Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen!</p>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-xl-3 col-lg-10 col-12">
-                             <div class="review-card">
-                                 <div class="d-flex justify-content-between">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/commenter.png" class="rounded-circle me-2" alt="User">
-                                     <div>
-                                         <strong>Julia Hoffmann</strong><br>
-                                         <small>vor 2 Monaten</small>
-                                     </div>
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/outline.png" alt="outline" class="small-images">
-                                 </div>
-                                 <div class="mt-2">
-                                     <span class="text-warning">★★★★★</span>
-                                     <p class="review-text">Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen! Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen!</p>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-xl-3 col-lg-10 col-12">
-                             <div class="review-card">
-                                 <div class="d-flex justify-content-between">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/commenter.png" class="rounded-circle me-2" alt="User">
-                                     <div>
-                                         <strong>Julia Hoffmann</strong><br>
-                                         <small>vor 2 Monaten</small>
-                                     </div>
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/monochrome.png" alt="google" class="small-images">
-                                 </div>
-                                 <div class="mt-2">
-                                     <span class="text-warning">★★★★★</span>
-                                     <p class="review-text">Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen! Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen!</p>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="carousel-item">
-                     <div class="row justify-content-center">
-                         <div class="col-xl-3 col-lg-10 col-12">
-                             <div class="review-card">
-                                 <div class="d-flex justify-content-between">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/commenter.png" class="rounded-circle me-2" alt="User">
-                                     <div>
-                                         <strong>Julia Hoffmann</strong><br>
-                                         <small>vor 2 Monaten</small>
-                                     </div>
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/outline.png" alt="outline" class="small-images">
-                                 </div>
-                                 <div class="mt-2">
-                                     <span class="text-warning">★★★★★</span>
-                                     <p class="review-text">Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen! Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen!</p>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-xl-3 col-lg-10 col-12">
-                             <div class="review-card">
-                                 <div class="d-flex justify-content-between">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/commenter.png" class="rounded-circle me-2" alt="User">
-                                     <div>
-                                         <strong>Julia Hoffmann</strong><br>
-                                         <small>vor 2 Monaten</small>
-                                     </div>
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/monochrome.png" alt="google" class="small-images">
-                                 </div>
-                                 <div class="mt-2">
-                                     <span class="text-warning">★★★★★</span>
-                                     <p class="review-text">Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen! Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen!</p>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-xl-3 col-lg-10 col-12">
-                             <div class="review-card">
-                                 <div class="d-flex justify-content-between">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/commenter.png" class="rounded-circle me-2" alt="User">
-                                     <div>
-                                         <strong>Julia Hoffmann</strong><br>
-                                         <small>vor 2 Monaten</small>
-                                     </div>
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/outline.png" alt="outline" class="small-images">
-                                 </div>
-                                 <div class="mt-2">
-                                     <span class="text-warning">★★★★★</span>
-                                     <p class="review-text">Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen! Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen!</p>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-xl-3 col-lg-10 col-12">
-                             <div class="review-card">
-                                 <div class="d-flex justify-content-between">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/commenter.png" class="rounded-circle me-2" alt="User">
-                                     <div>
-                                         <strong>Julia Hoffmann</strong><br>
-                                         <small>vor 2 Monaten</small>
-                                     </div>
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/monochrome.png" alt="google" class="small-images">
-                                 </div>
-                                 <div class="mt-2">
-                                     <span class="text-warning">★★★★★</span>
-                                     <p class="review-text">Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen! Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen!</p>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="carousel-item">
-                     <div class="row justify-content-center">
-                         <div class="col-xl-3 col-lg-10 col-12">
-                             <div class="review-card">
-                                 <div class="d-flex justify-content-between">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/commenter.png" class="rounded-circle me-2" alt="User">
-                                     <div>
-                                         <strong>Julia Hoffmann</strong><br>
-                                         <small>vor 2 Monaten</small>
-                                     </div>
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/outline.png" alt="outline" class="small-images">
-                                 </div>
-                                 <div class="mt-2">
-                                     <span class="text-warning">★★★★★</span>
-                                     <p class="review-text">Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen! Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen!</p>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-xl-3 col-lg-10 col-12">
-                             <div class="review-card">
-                                 <div class="d-flex justify-content-between">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/commenter.png" class="rounded-circle me-2" alt="User">
-                                     <div>
-                                         <strong>Julia Hoffmann</strong><br>
-                                         <small>vor 2 Monaten</small>
-                                     </div>
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/monochrome.png" alt="google" class="small-images">
-                                 </div>
-                                 <div class="mt-2">
-                                     <span class="text-warning">★★★★★</span>
-                                     <p class="review-text">Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen! Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen!</p>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-xl-3 col-lg-10 col-12">
-                             <div class="review-card">
-                                 <div class="d-flex justify-content-between">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/commenter.png" class="rounded-circle me-2" alt="User">
-                                     <div>
-                                         <strong>Julia Hoffmann</strong><br>
-                                         <small>vor 2 Monaten</small>
-                                     </div>
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/outline.png" alt="outline" class="small-images">
-                                 </div>
-                                 <div class="mt-2">
-                                     <span class="text-warning">★★★★★</span>
-                                     <p class="review-text">Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen! Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen!</p>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-xl-3 col-lg-10 col-12">
-                             <div class="review-card">
-                                 <div class="d-flex justify-content-between">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/commenter.png" class="rounded-circle me-2" alt="User">
-                                     <div>
-                                         <strong>Julia Hoffmann</strong><br>
-                                         <small>vor 2 Monaten</small>
-                                     </div>
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/monochrome.png" alt="google" class="small-images">
-                                 </div>
-                                 <div class="mt-2">
-                                     <span class="text-warning">★★★★★</span>
-                                     <p class="review-text">Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen! Nelly digitalisiert unser Arbeiten: Mehr Effizienz und weniger Papier bei Formularen fürs Rechenzentrum, Anamnese oder Datenschutzerklärungen!</p>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
+         <div id="reviewCarousel1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row justify-content-center">
+                        <?php while(have_rows('commenter_blocks')): the_row(); ?>
+                            <div class="col-lg-4 col-12">
+                                <div class="review-card">
+                                    <p class="review-text"><?= the_sub_field('comment'); ?></p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="users-display d-flex">
+                                            <?php $commenter_img = get_sub_field('commenter_img'); if($commenter_img) { ?>
+                                                <img src="<?= $commenter_img['url']; ?>" alt="<?= $commenter_img['alt']; ?>">
+                                            <?php } ?>
+                                            <div style="margin-left: 15px;">
+                                                <p class="name-commenter"><?php the_sub_field('commenter_name'); ?></p>
+                                                <small><?php the_sub_field('comment_day'); ?></small>
+                                                <span class="text-warning">★★★★★</span>
+                                            </div>
+                                        </div>
+                                        <?php $commenter_logo = get_sub_field('commenter_logo'); if($commenter_logo) { ?>
+                                            <img src="<?= $commenter_logo['url']; ?>" alt="<?= $commenter_logo['alt']; ?>" class="small-images">
+                                        <?php } ?>
+                                    </div>
+                                    <div class="mt-2">
+                                    </div>
+                                </div>
+                            </div>
+                    <?php endwhile; ?>
+                </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
  </section> 
- 
- 
+
  <!-- ONLINE BUCHEN SECTION -->
- <!--  -->
 
- <section class="partners">
-     <div class="container">
-         <div class="row justify-content-lg-around justify-content-center">
-             <div class="col-lg-4 col-12">
-                 <div class="in-partner-div">
-                     <p class="title-partner text-uppercase">Unsere Partner</p>
-                     <p class="sm-partner-text">Wir glauben, dass jeder ein effizienteres, transparenteres und zugänglicheres Gesundheitssystem verdient. Indem wir auf Interoperabilität setzen und traditionelle Prozesse digitalisieren, entlasten wir das Fachpersonal und verbessern das Patientenerlebnis. Unsere Kooperationspartner unterstützen uns auf dieser Mission.Wir glauben, dass jeder ein effizienteres, transparenteres und zugänglicheres Gesundheitssystem verdient. </p>
-                 </div>
-             </div>
-             <div class="col-xl-8 col-lg-12 margin-carousel">
-                 <div id="reviewCarousel2" class="carousel slide" data-bs-ride="carousel" data-bs-interval="40000000000">
+ <section class="questions-accordion">
+    <div class="container">
+        <h2 class="faq-title"><?= $faq_title ?></h2>
+        <div class="faq-accordion">
+            <?php while(have_rows('faq_items')): the_row(); ?>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <?php the_sub_field('faq_question'); ?>
+                        <span class="faq-icon">&#9660;</span>
+                    </div>
+                    <div class="faq-content">
+                        <?php the_sub_field('faq_answer'); ?>
+                    </div>
+                </div>
+            <?php endwhile; ?>
+        </div>
+    </div>
+</section>
 
-                     <div class="carousel-indicators carousel-minus-margin custom-indicators bottom-indicators">
-                         <button type="button" data-bs-target="#reviewCarousel2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 3" style="background-color: black;"></button>
-                         <button type="button" data-bs-target="#reviewCarousel2" data-bs-slide-to="1" aria-label="Slide 4" style="background-color: black;"></button>
-                         <button type="button" data-bs-target="#reviewCarousel2" data-bs-slide-to="2" aria-label="Slide 5" style="background-color: black;"></button>
-                     </div>
-             
-                     <div class="carousel-inner mobile-margin">
-                         <div class="carousel-item active">
-                             <div class="row justify-content-center">
-                                 <div class="non-d-partners">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                 </div>
-                                 <div class="non-d-partners">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="carousel-item">
-                             <div class="row justify-content-center">
-                                 <div class="non-d-partners">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                 </div>
-                                 <div class="non-d-partners">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="carousel-item">
-                             <div class="row justify-content-center">
-                                 <div class="non-d-partners">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                 </div>
-                                 <div class="non-d-partners">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partner-img.png" class="partner-img-sizes" alt="partner-img">
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-                 <img src="<?= site_url() ?>/wp-content/uploads/2025/07/partners-orange-1.png" alt="partner-orange" class="partner-orange-div">
-             </div>
-         </div>
-     </div>
- </section>
- <section class="form-part" id="contact-section">
-     <div class="container">
-         <h2 class="text-center title-form">KONTAKTIERE UNS</h2>
-         <form class="contact-form-f">
-             <div class="row">
-                 <div class="col-lg-4">
-                     <div class="form-group custom-floating">
-                         <label for="vorname" class="form-label">Vorname</label>
-                         <input type="text" class="form-control custom-input" id="vorname" placeholder="">
-                     </div>
-                 </div>
-                 <div class="col-lg-4">
-                     <div class="form-group custom-floating">
-                         <label for="nachname" class="form-label">Nachname</label>
-                         <input type="text" class="form-control custom-input" id="nachname" placeholder="">
-                     </div>
-                 </div>
-                 <div class="col-lg-4">
-                     <div class="form-group custom-floating">
-                         <label for="email" class="form-label">E-Mail*</label>
-                         <input type="email" class="form-control custom-input" id="email" placeholder="">
-                     </div>
-                 </div>
-             </div>
-     
-             <div class="form-group mt-3">
-                 <label for="nachricht" class="form-label">Ihre Nachricht</label>
-                 <textarea class="form-control custom-textarea" id="nachricht" rows="4"></textarea>
-             </div>
-     
-             <div class="text-center mt-4">
-                 <button type="submit" class="btn submit-btn">ABSENDEN</button>
-             </div>
-         </form>
-         <img src="<?= site_url() ?>/wp-content/uploads/2025/07/vertical-orange-1-2.png" alt="vertical-orange" class="right-orange-div">
-     </div>
- </section>
+<section class="form-part" id="contact-section">
+     <div class="container-fluid m-0 p-0">
+        <div class="row">
+            <div class="col-lg-5 col-12">
+                <img src="<?= $contact_img['url']; ?>" alt="<?= $contact_img['alt']; ?>" class="w-100 contact-img">
+            </div>
+                <div class="col-lg-5 col-12" style="margin: 0px 100px;">
+                    <p class="title-contact text-uppercase">kontaktiere uns</p>
+                    <form>
+                        <div class="form-group">
+                            <span class="form-label">Vorname*</span>
+                            <input type="text" class="form-input" name="vorname">
+                        </div>
+
+                        <div class="form-group">
+                            <span class="form-label">Nachname*</span>
+                            <input type="text" class="form-input" name="nachname">
+                        </div>
+
+                        <div class="form-group">
+                            <span class="form-label">E-Mail*</span>
+                            <input type="email" class="form-input" name="email">
+                        </div>
+
+                        <div class="form-group">
+                            <span class="form-label">Phone*</span>
+                            <input type="tel" class="form-input" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <span class="form-label">Ihre Nachricht</span>
+                            <textarea class="form-textarea" name="message"></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">ABSENDEN</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <?php
 }
 

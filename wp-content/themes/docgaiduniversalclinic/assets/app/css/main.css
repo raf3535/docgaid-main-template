@@ -368,19 +368,20 @@ img {
   background-image: url(http://localhost:8888/wordpress/wp-content/uploads/2025/07/border-cl.png)
 }
 .title-numbers-top {
-  font-size: 40px
+  font-size: 42px
 }
 .number-datas {
   margin-top: 100px
 }
 .span-bordered {
-  background-color: #222a35;
+  background-color: #f85b00;
   width: 230px;
   margin: auto;
-  padding: 1px;
-  font-size: 28px;
+  padding: 7px;
+  font-size: 22px;
   border-bottom-right-radius: 22px;
-  border-top-left-radius: 22px
+  border-top-left-radius: 22px;
+  font-weight: 200
 }
 .span-text-top {
   margin-bottom: 0
@@ -496,11 +497,12 @@ img {
   width: 91%
 }
 .span-bordered-long {
-  background-color: #222a35;
+  background-color: #f85b00;
   width: 600px;
   margin: auto;
   padding: 9px;
-  font-size: 22px;
+  font-size: 23px;
+  font-weight: 300;
   border-bottom-right-radius: 22px;
   border-top-left-radius: 22px
 }
@@ -798,6 +800,23 @@ img {
 .assistant-section li {
   margin-top: 20px
 }
+.number-big-as {
+  color: #f85b00;
+  font-weight: 700;
+  font-size: 60px
+}
+.assistant-hr {
+  color: rgba(248,91,0,.8);
+  width: 500px;
+  margin: 0
+}
+.text-assistant {
+  font-size: 17px;
+  color: #000;
+  font-weight: 200;
+  margin: 20px;
+  margin-bottom: 0
+}
 .tablet-container {
   position: relative;
   display: inline-block;
@@ -856,6 +875,14 @@ img {
   margin-top: 60px;
   border: none
 }
+.custom-card .card-header:hover {
+  background-color: #f15a24;
+  transition: .5s
+}
+.icons-consulting {
+  width: 180px;
+  margin: 20px
+}
 .custom-card .card-header {
   background-color: #1e1e26;
   color: #fff;
@@ -897,8 +924,7 @@ img {
   text-align: center;
   color: #f15a24;
   font-size: 36px;
-  margin-bottom: 60px;
-  margin-top: 120px
+  margin-bottom: 60px
 }
 .faq-accordion {
   width: 90%;
@@ -910,7 +936,6 @@ img {
   border-radius: 5px;
   overflow: hidden;
   background: #fff;
-  border-bottom: 1px solid transparent;
   -o-border-image: linear-gradient(to left,#f85b00 0,#000 100%) 12!important;
   border-image: linear-gradient(to left,#f85b00 0,#000 100%) 12!important;
   background-clip: padding-box;
@@ -926,6 +951,8 @@ img {
 .faq-header {
   padding: 15px;
   font-weight: 700;
+  font-size: 17px;
+  background-color: #d3d3d3;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -946,7 +973,7 @@ img {
 }
 .faq-icon {
   transition: transform .3s ease-in-out;
-  color: #f15a24
+  color: #222a35
 }
 .faq-item.active .faq-icon {
   transform: rotate(180deg)
@@ -955,8 +982,8 @@ img {
   background: #fff;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,.1);
-  border: 1px solid #f85b00;
-  border-radius: 12px;
+  border: 2px solid #f85b00;
+  border-radius: 40px;
   overflow: hidden;
   position: relative;
   width: 100%!important
@@ -968,15 +995,14 @@ img {
   fill: #fff
 }
 .review-card img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  width: 100px;
   -o-object-fit: cover;
   object-fit: cover
 }
-.review-card strong {
+.name-commenter {
   font-size: 16px;
-  color: #000
+  font-weight: 500;
+  margin: 0
 }
 .review-card small {
   font-size: 14px;
@@ -984,18 +1010,17 @@ img {
 }
 .review-card .text-warning {
   font-size: 20px;
-  display: block;
-  margin-top: 5px
+  display: block
 }
 .review-text {
-  font-size: 15px;
+  font-size: 17px;
   color: #333;
   line-height: 1.5;
   margin-top: 10px
 }
 .small-images {
-  width: 25px!important;
-  height: 25px!important
+  width: 30px!important;
+  margin-top: 40px
 }
 .bottom-indicators {
   left: 30%!important
@@ -1019,12 +1044,12 @@ img {
   width: 50px
 }
 .partners {
-  padding: 240px 0 150px 0
+  padding: 90px 20px
 }
 .partner-img-sizes {
   width: 170px!important;
   height: 100px;
-  margin: 9px;
+  margin: 20px;
   border-radius: 12px
 }
 .title-partner {
@@ -1037,61 +1062,60 @@ img {
   margin-top: -400px
 }
 .sm-partner-text {
-  font-size: 17px;
-  font-weight: 200
+  font-size: 20px;
+  font-weight: 300;
+  margin-top: 30px
 }
-.title-form {
-  color: #f15a24;
+.form-part {
+  margin: 150px 0
+}
+.title-contact {
   font-size: 32px;
-  font-weight: 700;
-  font-weight: 500;
+  color: #f85b00;
   margin-bottom: 20px
 }
-.contact-form-f {
-  margin-top: 100px
+.form-group {
+  position: relative;
+  margin-bottom: 30px
 }
 .form-label {
-  font-weight: 700;
-  font-size: 14px;
-  display: block;
-  margin-bottom: 5px;
-  color: #000
-}
-.custom-input,
-.custom-textarea {
-  position: relative;
-  border: none;
-  border-radius: 14px!important;
-  padding: 10px;
-  width: 100%;
-  -o-border-image: linear-gradient(to left,#f85b00 0,#000 100%) 12!important;
-  border-image: linear-gradient(to left,#f85b00 0,#000 100%) 12!important;
-  border: 1px solid
-}
-.custom-textarea {
-  resize: none;
-  height: 140px
-}
-.submit-btn {
-  background-color: #f15a24!important;
-  color: #fff!important;
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  background: #fff;
+  padding: 0 8px;
   font-size: 16px;
-  padding: 15px 150px!important;
-  border-radius: 12px!important;
+  font-weight: 400;
+  color: #222a35
+}
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid #222a35;
+  border-radius: 50px;
+  font-size: 16px;
+  outline: 0
+}
+.form-textarea {
+  min-height: 120px;
+  border-radius: 20px;
+  resize: vertical
+}
+.btn-submit {
+  display: inline-block;
+  padding: 12px 40px;
+  background: #222a35;
+  color: #fff;
   border: none;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: 300;
+  cursor: pointer;
   transition: .3s
 }
-.submit-btn:hover {
-  background-color: #d14d1e
-}
-.custom-input {
-  width: 100%!important;
-  height: 50px!important
-}
-.right-orange-div {
-  position: absolute;
-  right: 0;
-  margin-top: -700px
+.btn-submit:hover {
+  background: #333842
 }
 .footer-section {
   position: relative;
@@ -1669,7 +1693,7 @@ img {
   .partner-img-sizes {
     width: 148px!important;
     height: 90px;
-    margin: 4px;
+    margin: 20px;
     border-radius: 12px
   }
   .orange-div {

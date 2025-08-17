@@ -1839,7 +1839,7 @@ img{
 }
 
 .title-numbers-top{
-    font-size: 40px;
+    font-size: 42px;
 }
 
 .number-datas{
@@ -1847,13 +1847,14 @@ img{
 }
 
 .span-bordered{
-    background-color: #222A35;
+    background-color: #F85B00;
     width: 230px;
     margin: auto;
-    padding: 1px;
-    font-size: 28px;
+    padding: 7px;
+    font-size: 22px;
     border-bottom-right-radius: 22px;
     border-top-left-radius: 22px;
+    font-weight: 200;
 }
 
 .span-text-top{
@@ -2002,11 +2003,12 @@ img{
 }
 
 .span-bordered-long{
-    background-color: #222A35;
+    background-color: #F85B00;
     width: 600px;
     margin: auto;
     padding: 9px;
-    font-size: 22px;
+    font-size: 23px;
+    font-weight: 300;
     border-bottom-right-radius: 22px;
     border-top-left-radius: 22px;
 }
@@ -2364,6 +2366,26 @@ img{
     margin-top: 20px;
 }
 
+.number-big-as{
+    color: #F85B00;
+    font-weight: bold;
+    font-size: 60px;
+}
+
+.assistant-hr{
+    color: #F85B00CC;
+    width: 500px;
+    margin: 0px;
+}
+
+.text-assistant{
+    font-size: 17px;
+    color: black;
+    font-weight: 200;
+    margin: 20px;
+    margin-bottom: 0px;
+}
+
 .tablet-container {
     position: relative;
     display: inline-block;
@@ -2436,6 +2458,16 @@ img{
     border: none;
 }
 
+.custom-card .card-header:hover {
+    background-color: #F15A24;
+    transition: 0.5s;
+}
+
+.icons-consulting{
+    width: 180px;
+    margin: 20px;
+}
+
 .custom-card .card-header {
     background-color: #1e1e26;
     color: white;
@@ -2487,7 +2519,6 @@ img{
     color: #F15A24;
     font-size: 36px;
     margin-bottom: 60px;
-    margin-top: 120px;
 }
 
 .faq-accordion {
@@ -2501,7 +2532,6 @@ img{
     border-radius: 5px;
     overflow: hidden;
     background: white;
-    border-bottom: 1px solid transparent;
     border-image: linear-gradient(to left, #F85B00 0%, #000000 100%) 12 !important;
     background-clip: padding-box;
     padding: 1px;
@@ -2519,6 +2549,8 @@ img{
 .faq-header {
     padding: 15px;
     font-weight: bold;
+    font-size: 17px;
+    background-color: #D3D3D3;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -2542,7 +2574,7 @@ img{
 
 .faq-icon {
     transition: transform 0.3s ease-in-out;
-    color: #F15A24;
+    color: #222A35;
 }
 
 .faq-item.active .faq-icon {
@@ -2555,8 +2587,8 @@ img{
     background: #fff;
     padding: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(248, 91, 0, 1);
-    border-radius: 12px;
+    border: 2px solid rgba(248, 91, 0, 1);
+    border-radius: 40px;
     overflow: hidden;
     position: relative;
     width: 100% !important;
@@ -2571,15 +2603,14 @@ img{
 }
 
 .review-card img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    width: 100px;
     object-fit: cover;
 }
 
-.review-card strong {
+.name-commenter{
     font-size: 16px;
-    color: #000;
+    font-weight: 500;
+    margin: 0px;
 }
 
 .review-card small {
@@ -2590,19 +2621,18 @@ img{
 .review-card .text-warning {
     font-size: 20px;
     display: block;
-    margin-top: 5px;
 }
 
 .review-text {
-    font-size: 15px;
+    font-size: 17px;
     color: #333;
     line-height: 1.5;
     margin-top: 10px;
 }
 
 .small-images{
-    width: 25px !important;
-    height: 25px !important;
+    width: 30px !important;
+    margin-top: 40px;
 }
 
 /* .carousel-indicators{
@@ -2640,13 +2670,13 @@ img{
 /* PARTNER IMAGE */
 
 .partners{
-    padding: 240px 0px 150px 0px;
+    padding: 90px 20px;
 }
 
 .partner-img-sizes{
     width: 170px !important;
     height: 100px;
-    margin: 9px;
+    margin: 20px;
     border-radius: 12px;
 }
 
@@ -2666,75 +2696,70 @@ img{
 }
 
 .sm-partner-text{
-    font-size: 17px;
-    font-weight: 200;
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 30px;
 }
 
 /* FORM-PART */
 
+.form-part{
+    margin: 150px 0px;
+}
 
-
-.title-form {
-    color: #F15A24;
+.title-contact{
     font-size: 32px;
-    font-weight: bold;
-    font-weight: 500;
+    color: #F85B00;
     margin-bottom: 20px;
 }
 
-.contact-form-f {
-    margin-top: 100px;
-}
-
-.form-label {
-    font-weight: bold;
-    font-size: 14px;
-    display: block;
-    margin-bottom: 5px;
-    color: black;
-}
-
-.custom-input,
-.custom-textarea {
+.form-group {
     position: relative;
-    border: none;
-    border-radius: 14px !important;
-    padding: 10px;
-    width: 100%;
-    border-image: linear-gradient(to left, #F85B00 0%, #000000 100%) 12 !important;
-    border: 1px solid;
-}
+    margin-bottom: 30px;
+  }
 
-.custom-textarea {
-    resize: none;
-    height: 140px;
-}
-
-.submit-btn {
-    background-color: #F15A24 !important;
-    color: white !important;
-    font-size: 16px;
-    padding: 15px 150px !important;
-    border-radius: 12px !important;
-    border: none;
-
-    transition: 0.3s;
-}
-
-.submit-btn:hover {
-    background-color: #d14d1e;
-}
-
-.custom-input{
-    width: 100% !important;
-    height: 50px !important;
-}
-
-.right-orange-div{
+  .form-label {
     position: absolute;
-    right: 0px;
-    margin-top: -700px;
-}
+    top: -12px;
+    left: 20px;
+    background: #fff;
+    padding: 0 8px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #222A35;
+  }
+
+  .form-input, .form-textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #222A35;
+    border-radius: 50px;
+    font-size: 16px;
+    outline: none;
+  }
+
+  .form-textarea {
+    min-height: 120px;
+    border-radius: 20px;
+    resize: vertical;
+  }
+
+  .btn-submit {
+    display: inline-block;
+    padding: 12px 40px;
+    background: #222A35;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .btn-submit:hover {
+    background: #333842;
+  }
 
 /* FOOTER */
 
@@ -3459,7 +3484,7 @@ img{
     .partner-img-sizes{
         width: 148px !important;
         height: 90px;
-        margin: 4px;
+        margin: 20px;
         border-radius: 12px;
     }
 
