@@ -504,6 +504,120 @@ document.querySelectorAll(".accordion-header").forEach(header => {
       content.style.display = content.style.display === "block" ? "none" : "block";
   });
 });
+
+var swiper = new Swiper(".mySwiper", {
+  loop: true,
+  autoplay: {
+    delay: 5000000,
+    disableOnInteraction: false,
+  },
+  slidesPerView: 1,
+  spaceBetween: 30,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    768: { slidesPerView: 2 }, // tablet & desktop
+  }
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".faq-item");
+
+  items.forEach(item => {
+    const header = item.querySelector(".faq-header");
+
+    header.addEventListener("click", () => {
+      // Close all other items
+      items.forEach(i => {
+        if (i !== item) {
+          i.classList.remove("active");
+          i.querySelector(".faq-content").style.maxHeight = null;
+          i.querySelector(".faq-icon").style.transform = "rotate(0deg)";
+        }
+      });
+
+      // Toggle current item
+      item.classList.toggle("active");
+
+      const content = item.querySelector(".faq-content");
+      const icon = item.querySelector(".faq-icon");
+
+      if (item.classList.contains("active")) {
+        content.style.maxHeight = content.scrollHeight+ 20  + "px";
+        icon.style.transform = "rotate(180deg)";
+      } else {
+        content.style.maxHeight = null;
+        icon.style.transform = "rotate(0deg)";
+      }
+    });
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".tablet-btn");
+  const headers = document.querySelectorAll(".accordion-header");
+
+  // ✅ Toggle accordion function
+  function toggleAccordion(targetAccordion) {
+      if (targetAccordion) {
+          // Close others
+          document.querySelectorAll(".accordion-item").forEach(item => {
+              if (item !== targetAccordion) {
+                  item.classList.remove("active");
+                  item.querySelector(".accordion-content").style.maxHeight = null;
+              }
+          });
+
+          // Toggle current
+          const content = targetAccordion.querySelector(".accordion-content");
+          if (targetAccordion.classList.contains("active")) {
+              targetAccordion.classList.remove("active");
+              content.style.maxHeight = null;
+          } else {
+              targetAccordion.classList.add("active");
+              content.style.maxHeight = content.scrollHeight + "px";
+          }
+      }
+  }
+
+  // ✅ Tablet buttons → control accordion
+  buttons.forEach(btn => {
+      const targetId = btn.getAttribute("data-target");
+      const targetAccordion = document.getElementById(targetId);
+
+      btn.addEventListener("click", function () {
+          toggleAccordion(targetAccordion);
+      });
+
+      // Hover → temporary highlight
+      btn.addEventListener("mouseenter", function () {
+          if (targetAccordion && !targetAccordion.classList.contains("active")) {
+              targetAccordion.classList.add("hover-highlight");
+          }
+      });
+      btn.addEventListener("mouseleave", function () {
+          if (targetAccordion) {
+              targetAccordion.classList.remove("hover-highlight");
+          }
+      });
+  });
+
+  // ✅ Accordion headers → also clickable
+  headers.forEach(header => {
+      header.addEventListener("click", function () {
+          const targetAccordion = this.closest(".accordion-item");
+          toggleAccordion(targetAccordion);
+      });
+  });
+});
 (function ($) {
 
     // TODO AOS Scrollable animation init
