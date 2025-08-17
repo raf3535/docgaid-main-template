@@ -34,7 +34,7 @@ function custom_homepage_content()
 
 ?>
     <div class="hero-front-page">
-        <div class="container">
+        <div class="container-lg">
             <div class="row align-items-center justify-content-center">
                 <div class="in-col-textes text-center">
                     <p class="sub-title-top"><?= $innovation_subtitle; ?></p>
@@ -56,13 +56,16 @@ function custom_homepage_content()
             </div>
             <div class="d-flexx wrapper">
                 <div class="image-statistic">
-                    <img src="<?= CHILD_URL ?>/assets/app/img/tablet-hero-1.png" alt="">
-                    <div class="stat-box text-center">
-                        <p class="stat-main">7511€</p>
+                    <img class="image-statistic-main" src="<?= CHILD_URL ?>/assets/app/img/tablet-hero-1.png" alt="">
+                    <div class="stat-box">
+                        <!-- <p class="number-counter"> <span id="counter" class="counter-value" data-count="7511"> 7511 </span>€</p> -->
+                        <p class="stat-main"><span class="counter-value">7511</span>€</p>
+                        <img src="<?= CHILD_URL ?>/assets/app/svg/line-subtitle.svg" class="line-stat">
                         <p class="stat-info">Ihr Kostenvorteil pro Jahr</p>
                     </div>
-                    <div class="stat-box text-center">
-                        <p class="stat-main">374H</p>
+                    <div class="stat-box">
+                        <p class="stat-main"><span class="counter-value">374</span>H</p>
+                        <img src="<?= CHILD_URL ?>/assets/app/svg/line-subtitle.svg" class="line-stat">
                         <p class="stat-info">Ihr Zeitersparnis pro Jahr</p>
                     </div>
                 </div>
@@ -72,13 +75,15 @@ function custom_homepage_content()
                     </div>
                 </div>
                 <div class="image-statistic">
-                    <img class="image-statistic-right" src="<?= CHILD_URL ?>/assets/app/img/tablet-hero-3.png" alt="">
-                    <div class="stat-box text-center">
-                        <p class="stat-main">2020</p>
+                    <img class="image-statistic-main image-statistic-right" src="<?= CHILD_URL ?>/assets/app/img/tablet-hero-3.png" alt="">
+                    <div class="stat-box">
+                        <p class="stat-main"><span class="counter-value">2021</span></p>
+                        <img src="<?= CHILD_URL ?>/assets/app/svg/line-subtitle.svg" class="line-stat">
                         <p class="stat-info">Gründungsidee</p>
                     </div>
-                    <div class="stat-box text-center">
-                        <p class="stat-main">3H</p>
+                    <div class="stat-box">
+                        <p class="stat-main"><span class="counter-value">3</span>H</p>
+                        <img src="<?= CHILD_URL ?>/assets/app/svg/line-subtitle.svg" class="line-stat">
                         <p class="stat-info">Auftragsbearbeitung</p>
                     </div>
                 </div>
@@ -86,45 +91,6 @@ function custom_homepage_content()
         </div>
     </div>
 
-
-
- <div class="number-datas">
-     <div class="container-fluid p-0 m-0">
-         <div class="text-center text-numbers-top d-flex justify-content-center">
-             <div class="text-center">
-                 <p class="title-numbers-top"><?=$fact_title ?></p>
-                 <div class="span-bordered">
-                     <p class="span-text-top text-white"><?=$fact_subtitle ?></p>
-                 </div>
-             </div>
-             <img src="<?= site_url() ?>/wp-content/uploads/2025/07/dotted-2.png" alt="dotted" class="dotted-position">
-         </div>
-         <div class="all-in-div">
-             <div class="d-flex justify-content-center" style="margin-top: 60px;">
-             <?php
-                if (have_rows("fact_number")):
-                    while (have_rows("fact_number")) : the_row();
-                        $fact_number = get_sub_field('number');
-                        $fact_text = get_sub_field('text');
-                ?>
-                        <div class="orange-circle-main">
-                         <div class="rectangle-block orange-bck-dashed">
-                             <p class="text-center number-big text-white"><?=$fact_number ?></p>
-                             <p class="text-center desc-text text-white"><?=$fact_text ?></p>
-                         </div>
-                     </div>
-                     <div class="rectangle-block transparent-bck">
-                         <p class="text-center number-big"><?=$fact_number ?></p>
-                         <p class="text-center desc-text"><?=$fact_text ?></p>
-                     </div>
-                <?php
-                    endwhile;
-                endif;
-            ?>
-            </div>
-         </div>
-     </div>
- </div>
  <div class="praxis-section" id="praxis-section">
      <div class="container">
         <div class="m-auto">

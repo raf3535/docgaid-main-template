@@ -4,7 +4,10 @@ add_action( 'wp_enqueue_scripts', 'custom_include_assets' );
 
 function custom_include_assets() {
     $jsArray = [
-       CHILD_URL . '/assets/libs/swiper/js/swiper-bundle.min.js'
+       CHILD_URL . '/assets/libs/swiper/js/swiper-bundle.min.js',
+       CHILD_URL . '/assets/libs/swiper/js/wow.min.js',
+       CHILD_URL . '/assets/libs/swiper/js/counter.js',
+       CHILD_URL . '/assets/libs/swiper/js/jquery.waypoints.js'
     ];
 
     $cssArray = [
