@@ -11,8 +11,7 @@ function custom_do_header()
     remove_action('genesis_after_header', 'genesis_do_nav', 10);
     remove_action('genesis_after_header', 'genesis_do_subnav', 10);
 
-    $header_logo = get_field('header_logo', 76);
-
+    $header_logo = get_field('logo_default', 'option');
 ?>
 
 <header class="header-section">
