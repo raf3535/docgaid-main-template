@@ -31,11 +31,11 @@ function custom_footer()
     <section class="footer-section">
             <div class="container-fluid p-0 m-0">
                 <div class="row justify-content-around">
-                    <div class="col-lg-2 col-10">
+                    <div class="col-lg-2 col-8">
                         <?php 
                             $logo = get_field('logo_white', 'option');
                         ?>
-                        <img src="<?= $logo['url'] ?>" alt="<?= $logo['alt']; ?>">
+                        <img src="<?= $logo['url'] ?>" alt="<?= $logo['alt']; ?>" class="footer-logo">
                     </div>
                     <div class="col-lg-2 col-10">
                         <p class="footer-c-text text-white">Mit DocGaid® kannst du deine Arbeitsprozesse optimieren, deine Assistenz entlasten und ein effektives sowie organisiertes Arbeiten fördern.</p>

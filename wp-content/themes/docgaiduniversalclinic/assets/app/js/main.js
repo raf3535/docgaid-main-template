@@ -151,6 +151,29 @@ $(document).ready(function() {
   }
 
 });
+new Swiper(".comments", {
+  // slidesPerView: 1,
+  spaceBetween: 20,
+  pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+  },
+  navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+      768: {
+          slidesPerView: 1, // max 2 on tablet
+          spaceBetween: 24,
+      },
+      1200: {
+          slidesPerView: 2, // 👈 show only available slides
+          spaceBetween: 32,
+      },
+  },
+});
+
 var swiper = new Swiper(".mySwiper", {
   loop: true,
   autoplay: {
@@ -264,6 +287,64 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 });
+
+// document.addEventListener("DOMContentLoaded", function () {
+  // const swiperEl = document.querySelector(".mySwiper");
+  // if (!swiperEl) return;
+
+  // const count = parseInt(swiperEl.getAttribute("data-count"), 10) || 0;
+
+  // new Swiper(".mySwiper", {
+  //     slidesPerView: 1,
+  //     spaceBetween: 20,
+  //     pagination: {
+  //         el: ".swiper-pagination",
+  //         clickable: true,
+  //     },
+  //     navigation: {
+  //         nextEl: ".swiper-button-next",
+  //     },
+  //     breakpoints: {
+  //         768: {
+  //             slidesPerView: count > 1 ? 2 : 1, // max 2 on tablet
+  //             spaceBetween: 24,
+  //         },
+  //         1200: {
+  //             slidesPerView: 2, // 👈 show only available slides
+  //             spaceBetween: 32,
+  //         },
+  //     },
+  // });
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+  var partnerSwiper = new Swiper(".partnerSwiper2", {
+    slidesPerView: 5,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination-partner",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next-partner",
+      prevEl: ".swiper-button-prev-partner",
+    },
+    breakpoints: {
+      1200: { slidesPerView: 5 },
+      992: { slidesPerView: 4 },
+      768: { slidesPerView: 3 },
+      576: { slidesPerView: 2 },
+      0: { slidesPerView: 1 },
+    },
+  });
+});
+
+new WOW().init();
 (function ($) {
 
     // TODO AOS Scrollable animation init
