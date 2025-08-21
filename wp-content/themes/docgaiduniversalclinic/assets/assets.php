@@ -26,5 +26,6 @@ function custom_include_assets() {
     // include general theme files
     wp_enqueue_style( 'theme-main', CHILD_URL . '/assets/app/css/main.min.css' , array(), filemtime(__DIR__ . '/app/css/main.min.css'));
     wp_enqueue_script( 'theme-main', CHILD_URL . '/assets/app/js/main.min.js', array('jquery'), filemtime(__DIR__ . '/app/js/main.min.js'), true );
+    wp_enqueue_style( 'animate-css', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css' );
 
 }

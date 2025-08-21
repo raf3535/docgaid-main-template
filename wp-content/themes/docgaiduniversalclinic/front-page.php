@@ -31,12 +31,14 @@ function custom_homepage_content()
     $partner_content = get_field('partner_content');
     $faq_title = get_field('faq_title');
     $contact_img = get_field('contact_img');
+    $comments_title = get_field('comments_title');
+    $contact_title = get_field('contact_title');
 
 ?>
     <div class="hero-front-page">
         <div class="container-lg">
             <div class="row align-items-center justify-content-center">
-                <div class="in-col-textes text-center">
+                <div class="in-col-textes text-center wow animate__animated animate__fadeInDown">
                     <p class="sub-title-top"><?= $innovation_subtitle; ?></p>
                     <img src="<?= CHILD_URL ?>/assets/app/svg/line-subtitle.svg">
 
@@ -45,7 +47,7 @@ function custom_homepage_content()
                         <br> Mehr <span class="orange-tt">Organisation</span>
                     </p>
                 </div>
-                <div class="test-uns-button d-flex justify-content-between align-items-center">
+                <div class="test-uns-button d-flex justify-content-between align-items-center wow animate__animated animate__fadeInUp">
                     <p>Kontaktieren Sie uns jetzt !</p>
                     <div class="round-button">
                         <div class="round-button-inner-button">
@@ -57,13 +59,13 @@ function custom_homepage_content()
             <div class="d-flexx wrapper">
                 <div class="image-statistic">
                     <img class="image-statistic-main" src="<?= CHILD_URL ?>/assets/app/img/tablet-hero-1.png" alt="">
-                    <div class="stat-box">
+                    <div class="stat-box wow animate__animated animate__fadeInLeft">
                         <!-- <p class="number-counter"> <span id="counter" class="counter-value" data-count="7511"> 7511 </span>€</p> -->
                         <p class="stat-main"><span class="counter-value">7511</span>€</p>
                         <img src="<?= CHILD_URL ?>/assets/app/svg/line-subtitle.svg" class="line-stat">
                         <p class="stat-info">Ihr Kostenvorteil pro Jahr</p>
                     </div>
-                    <div class="stat-box">
+                    <div class="stat-box wow animate__animated animate__fadeInLeft">
                         <p class="stat-main"><span class="counter-value">374</span>H</p>
                         <img src="<?= CHILD_URL ?>/assets/app/svg/line-subtitle.svg" class="line-stat">
                         <p class="stat-info">Ihr Zeitersparnis pro Jahr</p>
@@ -76,12 +78,12 @@ function custom_homepage_content()
                 </div>
                 <div class="image-statistic">
                     <img class="image-statistic-main image-statistic-right" src="<?= CHILD_URL ?>/assets/app/img/tablet-hero-3.png" alt="">
-                    <div class="stat-box">
+                    <div class="stat-box wow animate__animated animate__fadeInRight">
                         <p class="stat-main"><span class="counter-value">2021</span></p>
                         <img src="<?= CHILD_URL ?>/assets/app/svg/line-subtitle.svg" class="line-stat">
                         <p class="stat-info">Gründungsidee</p>
                     </div>
-                    <div class="stat-box">
+                    <div class="stat-box wow animate__animated animate__fadeInRight">
                         <p class="stat-main"><span class="counter-value">3</span>H</p>
                         <img src="<?= CHILD_URL ?>/assets/app/svg/line-subtitle.svg" class="line-stat">
                         <p class="stat-info">Auftragsbearbeitung</p>
@@ -94,8 +96,8 @@ function custom_homepage_content()
  <div class="praxis-section" id="praxis-section">
      <div class="container">
         <div class="m-auto">
-            <div class="text-center">
-                <p class="title-numbers-top"><?=$benefit_title ?></p>
+            <div class="text-center wow animate__animated animate__fadeInDown">
+                <p class="title-numbers-top "><?=$benefit_title ?></p>
                 <div class="span-bordered-long">
                     <p class="span-text-top text-white"><?=$benefit_subtitle?></p>
                 </div>
@@ -105,7 +107,7 @@ function custom_homepage_content()
             <?php while (have_rows('benefit_all')): the_row();?>
                 <div class="row justify-content-xl-around justify-content-lg-center tilt-praxis <?= $i % 2 == 0 ?: 'flex-row-reverse'; ?>" style="margin-top: 50px;">
                     <div class="col-lg-5 col-12">
-                        <div class="praxis-textes tilt-item">
+                        <div class="praxis-textes tilt-item wow animate__animated animate__fadeInLeft">
                             <p class="title-gradient text-uppercase"><?= the_sub_field('benefit_name'); ?></p>
                             <hr class="gradient-break">
                             <p class="sub-praxis"><?= the_sub_field('benefit_desc'); ?></p>
@@ -122,7 +124,7 @@ function custom_homepage_content()
                         </div>   
                     </div>   
                     <div class="col-lg-6 col-12 d-flex align-items-center justify-content-md-center margins-tablet">
-                        <div class="images tilt-item d-flex">
+                        <div class="images tilt-item d-flex wow animate__animated animate__fadeInRight">
                             <div class="tablet-praxis">
                                 <?php $image = get_sub_field('tablet_benefit'); if($image) { ?>
                                     <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="w-100">
@@ -143,7 +145,7 @@ function custom_homepage_content()
  <div class="doctors-section" id="doctors-section">
      <div class="overlay"></div>
      <div class="container-fluid container p-0 m-0">
-         <div class="row justify-content-center text-center">
+         <div class="row justify-content-center text-center wow animate__animated animate__fadeInUp">
              <div class="col-lg-7 col-12">
                  <p class="orange-big-title text-uppercase"><?= $title_doctors; ?></p>
                  <p class="text-white sm-bck-text"><?= $text_doctors; ?></p>
@@ -157,7 +159,7 @@ function custom_homepage_content()
         <div class="row justify-content-center">   
             <?php $i = 0; if (have_rows('items_tablet')): ?>
                 <?php while (have_rows('items_tablet')): the_row(); ?>
-                    <div class="col-lg-6 col-12 d-flex align-items-center">
+                    <div class="col-lg-6 col-12 d-flex align-items-center wow animate__animated animate__fadeInLeft">
                         <div class="accordion w-100">
                             <?php while(have_rows('accordion_item')): the_row(); ?>
                                 <?php 
@@ -188,7 +190,7 @@ function custom_homepage_content()
                 <?php endwhile; ?>
             <?php endif; ?>
 
-            <div class="col-lg-6 col-md-8 col-10 d-flex justify-content-center">
+            <div class="col-lg-6 col-10 d-flex justify-content-center wow animate__animated animate__fadeInRight">
                 <div class="tablet">
                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/w-tablet.png" alt="Tablet" class="tablet-image">
                     <div class="tablet-grid">
@@ -222,13 +224,13 @@ function custom_homepage_content()
  <section class="assistant-section" id="assistant-section">
      <div class="container">
          <div class="row justify-content-center">
-            <div class="col-lg-6 col-12">
-                <img src="<?= $assistant_image['url']; ?>" alt="<?= $assistant_image['alt']; ?>" class="w-100">
+            <div class="col-lg-6 col-12 wow animate__animated animate__fadeInLeft">
+                <img src="<?= $assistant_image['url']; ?>" alt="<?= $assistant_image['alt']; ?>" class="w-100 assistant-ch-img">
             </div>
-             <div class="col-lg-6 col-12">
+             <div class="col-lg-6 col-12 wow animate__animated animate__fadeInRight">
                 <div class="asist-textes left-text">
                     <p class="title-numbers-top"><?=$title_assistant ?></p>
-                    <div class="span-bordered-mid span-bordered" style="margin-left:0px;">
+                    <div class="span-bordered-mid span-bordered" >
                         <p class="span-text-top text-white text-center"><?=$subtitle_assistant ?></p>
                     </div>
                     <p class="title-not-gradient text-uppercase">DocGaid passt sich Deiner Praxis an. Was heißt das genau?</p>
@@ -250,12 +252,12 @@ function custom_homepage_content()
      <div class="container my-5">
         <div class="m-auto">
             <div class="text-center">
-                <p class="title-numbers-top"><?= $consulting_title ?></p>
+                <p class="title-numbers-top wow animate__animated animate__fadeInDown"><?= $consulting_title ?></p>
             </div>
         </div>
         <div class="row">
             <?php while(have_rows('consulting_block')): the_row(); ?>
-                <div class="col-lg-4 col-10">
+                <div class="col-lg-4 col-10 wow animate__animated animate__fadeInUp">
                     <div class="custom-card">
                         <div class="card-header bordered-header">
                         <?php $consulting_image = get_sub_field('consulting_image'); if($consulting_image) { ?>
@@ -272,70 +274,69 @@ function custom_homepage_content()
         </div>
      </div>
  </section>
- <section class="partners">
-     <div class="container">
-        <div class="in-partner-div d-flex justify-content-center text-center">
-            <div class="textes-center">
-                <p class="title-partner text-uppercase"><?= $partner_title ?></p>
-                <p class="sm-partner-text">Wir glauben, dass jeder ein effizienteres, transparenteres und zugänglicheres Gesundheitssystem verdient. Indem wir auf Interoperabilität setzen und traditionelle Prozesse digitalisieren, entlasten wir das Fachpersonal und verbessern das Patientenerlebnis. Unsere Kooperationspartner unterstützen uns auf dieser Mission.Wir glauben, dass jeder ein effizienteres, transparenteres und zugänglicheres Gesundheitssystem verdient. </p>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-12 margin-carousel">
-                <!-- <div id="reviewCarousel2" class="carousel slide" data-bs-ride="carousel" data-bs-interval="40000000000"> -->
-
-                <!-- 
-                <div class="carousel-indicators carousel-minus-margin custom-indicators bottom-indicators">
-                    <button type="button" data-bs-target="#reviewCarousel2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 3" style="background-color: black;"></button>
-                    <button type="button" data-bs-target="#reviewCarousel2" data-bs-slide-to="1" aria-label="Slide 4" style="background-color: black;"></button>
-                    <button type="button" data-bs-target="#reviewCarousel2" data-bs-slide-to="2" aria-label="Slide 5" style="background-color: black;"></button>
-                </div> 
-                -->
-            
-                <div class="carousel-inner mobile-margin">
-                    <div class="carousel-item active" style="display: flex; justify-content: center;">
-                        <div class="row justify-content-center">
-                            <div class="non-d-partners">
-                                <?php while (have_rows('partner_images')) : the_row(); ?>
-                                <?php $partner_single_img = get_sub_field('partner_single_img'); if($consulting_image) { ?>
-                                    <img src="<?= $partner_single_img['url']; ?>" alt="<?= $partner_single_img['alt']; ?>" class="icons-consulting">
-                                <?php } ?>
-                                <?php endwhile; ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- </div> -->
-            </div>
-        </div>
+ <section class="partners-section" id="partners-section">
+  <div class="container">
+    <div class="in-partner-div d-flex justify-content-center text-center wow animate__animated animate__fadeInDown">
+      <div class="textes-center">
+        <p class="title-partner text-uppercase"><?= $partner_title ?></p>
+        <p class="sm-partner-text"><?= $partner_content ?></p>
+      </div>
     </div>
- </section>
- <section class="comment-section">
-     <div class="container mt-5">
-        <h2 class="text-center faq-title">GOOGLE UND KUNDENREZENSIONEN</h2>
-        <!-- Swiper -->
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <?php while(have_rows('commenter_blocks')): the_row(); ?>
+
+    <div class="margin-carousel wow animate__animated animate__fadeInUp">
+      <div class="mobile-margin">
+        <div class="swiper partnerSwiper2">
+          <div class="swiper-wrapper">
+            <?php while (have_rows('partner_images')) : the_row(); ?>
+              <?php $partner_single_img = get_sub_field('partner_single_img'); ?>
+              <?php if ($partner_single_img) { ?>
                 <div class="swiper-slide">
+                  <img src="<?= $partner_single_img['url']; ?>" alt="<?= $partner_single_img['alt']; ?>" class="partner-img-sizes">
+                </div>
+              <?php } ?>
+            <?php endwhile; ?>
+          </div>
+
+          <div class="swiper-button-prev swiper-button-prev-partner"></div>
+          <div class="swiper-button-next swiper-button-next-partner"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <section class="comment-section">
+    <div class="container mt-5 wow animate__animated animate__fadeInUp">
+        <h2 class="text-center faq-title text-uppercase"><?= $comments_title ?></h2>
+
+        <?php if (have_rows('commenter_blocks')): ?>
+        <?php $count = count(get_field('commenter_blocks')); ?>
+
+        <!-- Swiper -->
+        <div class="swiper comments" data-count="<?= $count; ?> ">
+            <div class="swiper-wrapper">
+                <?php while (have_rows('commenter_blocks')): the_row(); ?>
+                <div class="swiper-slide wow animate__animated animate__fadeInUp">
                     <div class="review-card">
-                        <p class="review-text"><?= the_sub_field('comment'); ?></p>
+                        <p class="review-text"><?php the_sub_field('comment'); ?></p>
 
                         <div class="review-footer">
-                        <div class="review-user">
-                            <?php $commenter_img = get_sub_field('commenter_img'); if($commenter_img) { ?>
-                            <img class="user-img" src="<?= $commenter_img['url']; ?>" alt="<?= $commenter_img['alt']; ?>">
-                            <?php } ?>
-                            <div class="user-info">
-                            <p class="name-commenter"><?php the_sub_field('commenter_name'); ?></p>
-                            <small><?php the_sub_field('comment_day'); ?></small>
-                            <span class="stars">★★★★★</span>
+                            <div class="review-user">
+                                <?php $commenter_img = get_sub_field('commenter_img'); ?>
+                                <?php if ($commenter_img): ?>
+                                    <img class="user-img" src="<?= esc_url($commenter_img['url']); ?>" alt="<?= esc_attr($commenter_img['alt']); ?>">
+                                <?php endif; ?>
+                                <div class="user-info">
+                                    <p class="name-commenter"><?php the_sub_field('commenter_name'); ?></p>
+                                    <small><?php the_sub_field('comment_day'); ?></small>
+                                    <span class="stars">★★★★★</span>
+                                </div>
                             </div>
-                        </div>
 
-                        <?php $commenter_logo = get_sub_field('commenter_logo'); if($commenter_logo) { ?>
-                            <img class="logo-img" src="<?= $commenter_logo['url']; ?>" alt="<?= $commenter_logo['alt']; ?>">
-                        <?php } ?>
+                            <?php $commenter_logo = get_sub_field('commenter_logo'); ?>
+                            <?php if ($commenter_logo): ?>
+                                <img class="logo-img" src="<?= esc_url($commenter_logo['url']); ?>" alt="<?= esc_attr($commenter_logo['alt']); ?>">
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -350,15 +351,22 @@ function custom_homepage_content()
                     <polyline points="12 5 19 12 12 19"/>
                 </svg>
             </div>
+            <div class="swiper-button-prev" style="transform: rotate(180deg)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="#f85b00" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                    <polyline points="12 5 19 12 12 19"/>
+                </svg>
+            </div>
         </div>
+        <?php endif; ?>
     </div>
- </section> 
+</section>
 
  <!-- ONLINE BUCHEN SECTION -->
 
 <section class="questions-accordion">
-    <div class="container">
-        <h2 class="faq-title"><?= $faq_title ?></h2>
+    <div class="container wow animate__animated animate__fadeInDown">
+        <h2 class="faq-title text-uppercase"><?= $faq_title ?></h2>
         <div class="faq-accordion">
             <?php while(have_rows('faq_items')): the_row(); ?>
                 <div class="faq-item">
@@ -376,13 +384,13 @@ function custom_homepage_content()
 </section>
 
 <section class="form-part" id="contact-section">
-     <div class="container-fluid m-0 p-0">
-        <div class="row">
-            <div class="col-lg-5 col-12">
+     <div class="container wow animate__animated animate__fadeInRight">
+        <div class="row justify-content-lg-between justify-content-center">
+            <div class="col-lg-5 col-10 p-0">
                 <img src="<?= $contact_img['url']; ?>" alt="<?= $contact_img['alt']; ?>" class="w-100 contact-img">
             </div>
-                <div class="col-lg-5 col-12" style="margin: 0px 100px;">
-                    <p class="title-contact text-uppercase">kontaktiere uns</p>
+                <div class="col-lg-5 col-10">
+                    <p class="title-contact text-uppercase"><?=$contact_title ?></p>
                     <form>
                         <div class="form-group">
                             <span class="form-label">Vorname*</span>
