@@ -193,6 +193,7 @@ function custom_homepage_content()
             <div class="col-lg-6 col-10 d-flex justify-content-center wow animate__animated animate__fadeInRight">
                 <div class="tablet">
                     <img src="<?= site_url() ?>/wp-content/uploads/2025/07/w-tablet.png" alt="Tablet" class="tablet-image">
+                    <img src="<?= site_url() ?>/wp-content/uploads/2025/08/Screenshot-2025-01-25-at-23.11.29-2-3-1-scaled.png" alt="Tablet" class="tablet-bar">
                     <div class="tablet-grid">
                         <?php $j = 0; if (have_rows('items_tablet')): ?>
                             <?php while (have_rows('items_tablet')): the_row(); ?>
@@ -257,7 +258,7 @@ function custom_homepage_content()
         </div>
         <div class="row">
             <?php while(have_rows('consulting_block')): the_row(); ?>
-                <div class="col-lg-4 col-10 wow animate__animated animate__fadeInUp">
+                <div class="col-lg-4 col-12 wow animate__animated animate__fadeInUp">
                     <div class="custom-card">
                         <div class="card-header bordered-header">
                         <?php $consulting_image = get_sub_field('consulting_image'); if($consulting_image) { ?>
@@ -386,10 +387,10 @@ function custom_homepage_content()
 <section class="form-part" id="contact-section">
      <div class="container wow animate__animated animate__fadeInRight">
         <div class="row justify-content-lg-between justify-content-center">
-            <div class="col-lg-5 col-10 p-0">
+            <div class="col-lg-5 col-12 p-0">
                 <img src="<?= $contact_img['url']; ?>" alt="<?= $contact_img['alt']; ?>" class="w-100 contact-img">
             </div>
-                <div class="col-lg-5 col-10">
+                <div class="col-lg-5 col-12">
                     <p class="title-contact text-uppercase"><?=$contact_title ?></p>
                     <form>
                         <div class="form-group">

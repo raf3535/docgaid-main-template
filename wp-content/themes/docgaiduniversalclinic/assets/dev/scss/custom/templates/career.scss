@@ -1,0 +1,201 @@
+body.page-template-career {
+
+    .orange-text{
+        color: #F85B00;
+    }
+
+    .career-description{
+        padding: 80px 0px;
+        .title-career{
+            font-size: 40px;
+            font-weight: 600;
+            @include md{
+                font-size: 32px;
+            }
+            @include sm{
+                font-size: 26px;
+            }
+        }
+
+        .text-description{
+            font-size: 18px;
+            font-weight: 300;
+            @include md{
+                font-size: 16px;
+            }
+            @include sm{
+                font-size: 14px;
+            }
+        }
+
+        .career-btn{
+            margin-top: 30px;
+            width: 230px;
+            background-color: #F85B00;
+            color: white;
+            border: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 10px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            @include md{
+                font-size: 16px;
+                padding: 8px 25px;
+            }
+            @include sm{
+                font-size: 14px;
+                padding: 6px 20px;
+            }
+            &:hover{
+                background-color: darken(#F85B00, 10%);
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .career-single-title{
+        font-size: 35px;
+        font-weight: 400;
+        text-align: center;
+        padding: 40px 0px;
+        @include md{
+            font-size: 25px;
+        }
+        @include sm{
+            font-size: 20px;
+        }
+    }
+
+.filter-bar {
+    margin: 8px 0 16px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  
+    &__toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 200px;
+      padding: 10px 14px;
+      border: 1px solid #F85B00;
+      border-radius: 8px;
+      background: #fff;
+      cursor: pointer;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: .3px;
+      transition: box-shadow .2s, border-color .2s;
+  
+      &:hover { box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+      &[aria-expanded="true"] .dropdown__chevron { transform: rotate(-135deg); }
+    }
+  
+    &__chevron {
+      width: 10px; height: 10px;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg);
+      transition: transform .2s ease;
+    }
+  
+    &__menu {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 40px;
+      background: #fff;
+      border: 1px solid #F85B00;
+      border-radius: 12px;
+      box-shadow: 0 12px 24px rgba(0,0,0,.08);
+      min-width: 300px;
+      max-height: 320px;
+      overflow: auto;
+      padding: 8px 0;
+      opacity: 0; visibility: hidden; transform: translateY(6px);
+      transition: opacity .18s ease, transform .18s ease, visibility .18s;
+      z-index: 50;
+  
+      &.is-open { opacity: 1; visibility: visible; transform: translateY(0); }
+    }
+  
+    &__option {
+      padding: 12px 16px;
+      font-size: 14px;
+      line-height: 1;
+      color: #F85B00;
+      border-bottom: 1px solid #f0f0f0;
+      cursor: pointer;
+      user-select: none;
+      transition: background .15s;
+  
+      &:hover { background: #f6f6f6; }
+      &.is-active { background: #f0f0f0; font-weight: 600; }
+    }
+  }
+  
+  .card-box {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    min-height: 340px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 30px;
+  
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.079);
+      transition: background 0.3s ease;
+      z-index: 1;
+    }
+  
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  
+      &::after { background: rgba(0, 0, 0, 0.439); }
+    }
+  
+    .card-overlay {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 24px;
+      color: #fff;
+      border-top: 1px solid #fff;
+      border-top-right-radius: 6px;
+      border-top-left-radius: 8px;
+      z-index: 2;
+      background: linear-gradient(0deg, rgba(0,0,0,.669) 100%, transparent 50%);
+  
+      h3 {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0 0 8px;
+        letter-spacing: .5px;
+        text-transform: uppercase;
+      }
+  
+      p {
+        font-size: 15px;
+        line-height: 1.4;
+        margin: 0;
+        opacity: .9;
+      }
+    }
+  }
+  
+  
+      
+      
+
+}
