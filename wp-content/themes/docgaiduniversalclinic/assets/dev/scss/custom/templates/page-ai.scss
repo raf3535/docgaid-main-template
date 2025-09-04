@@ -1,0 +1,282 @@
+@use "custom/fonts";
+@import "custom/mixins";
+@import "custom/variables";
+
+body.page-template-page-ai {
+
+    .orange-text{
+        color: #F85B00;
+    }
+
+        
+    .billing-button{
+        background-color: #F85B00;
+        border: none;
+        padding: 12px 40px;
+        border-radius: 27px;
+        font-weight: 600;
+        font-size: 17px;
+        margin-top: 40px;
+        @include md{
+            font-size: 15px;
+            margin-top: 0px;
+        }
+        @include sm{
+            font-size: 14px;
+        }
+    }
+
+    .document-title{
+        text-align: center;
+        font-size: 45px;
+        padding-bottom: 40px;
+
+        @include md{
+            font-size: 32px;
+            padding: 0px;
+        }
+        @include sm{
+            font-size: 26px;
+        }
+    }
+
+    .billing-part{
+        position: relative;
+        z-index: 2;
+        background-image: url("http://localhost:8888/wordpress/wp-content/uploads/2025/08/young-man.png");
+        filter: brightness(0.5);
+        padding: 100px 0px 150px 0px;
+
+        .title-billing{
+            font-size: 50px;
+            @include md{
+                font-size: 40px;
+            }
+            @include sm{
+                font-size: 30px;
+            }
+        }
+
+        .billing-text{
+            font-size: 22px;
+            font-weight: 200;
+            @include md{
+                font-size: 20px;
+            }
+            @include sm{
+                font-size: 18px;
+            }
+        }
+    }
+
+    .billing-blocks{
+        position: relative;
+        z-index: 10;
+        .in-col-billing{
+            background-color: #222A35;
+            padding: 45px;
+            height: -webkit-fill-available;
+            border: 4px solid white;
+            margin-top: -90px;
+        }
+
+        .block-title{
+            font-size: 28px;
+            font-weight: 200;
+            margin-top: 30px;
+        }
+
+        .block-image{
+            @include md{
+                width: 150px;
+            }
+            @include sm{
+                width: 120px;
+            }
+        }
+
+        .block-content{
+            font-size: 18px;
+            font-weight: 200;
+            margin-top: 15px;
+        }
+    }
+
+    .documents-section{
+        padding: 100px 0px;
+
+        .document-subtitle{
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background: linear-gradient(90deg, #F85B00, #000000);
+            font-size: 30px;
+            @include md{
+                font-size: 24px;
+            }
+            @include sm{
+                font-size: 20px;
+            }
+        }
+
+        .document-small-title{
+            font-size: 20px;
+            font-weight: bold;
+            @include md{
+                font-size: 18px;
+            }
+            @include sm{
+                font-size: 16px;
+            }
+        }
+
+        ul{
+            padding-left: 10px !important;
+
+        }
+
+        ul li::marker {
+            color: #F85B00;
+            font-size: 30px;
+            @include md{
+                font-size: 24px;
+            }
+            @include sm{
+                font-size: 20px;
+            }
+        }
+        ul li{
+            font-weight: 400;
+            font-size: 17px;
+            margin-top: 14px;
+            @include md{
+                font-size: 15px;
+            }
+            @include sm{
+                font-size: 14px;
+            }
+        }
+
+        .orange-line{
+            width: 330px;
+            height: 2px;
+            background-color: #F85B00;
+            color: #F85B00;
+            opacity: 100%;
+        }
+        
+    }
+
+    .using-easy{
+        .big-number-use{
+            color: #F85B00;
+            font-size: 75px;
+            font-weight: bold;
+            @include md{
+                font-size: 60px;
+            }
+            @include sm{
+                font-size: 50px;
+            }
+        }
+
+        .title-block-using{
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 20px;
+
+            @include md{
+                font-size: 20px;
+            }
+            @include sm{
+                font-size: 18px;
+            }
+        }
+
+        .content-block-use{
+            font-size: 20px;
+            font-weight: 400;
+            margin-top: 15px;
+            @include md{
+                font-size: 18px;
+            }
+            @include sm{
+                font-size: 16px;
+            }
+        }
+        
+        .orange-line{
+            width: 200px;
+            height: 2px;
+            background-color: #F85B00;
+            color: #F85B00;
+            opacity: 100%;
+            margin: auto;
+        }
+
+        .long-btn-use{
+            background-color: #F85B00;
+            border: none;
+            padding: 12px 40px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 17px;
+            margin-top: 40px;
+            @include md{
+                font-size: 15px;
+            }
+            @include sm{
+                font-size: 14px;
+            }
+        }
+    }
+    .partners-section{
+        padding: 100px 0px;
+    }
+
+    .in-partner-div{
+        padding: 0px 100px;
+        @include md{
+            padding: 0px;
+        }
+        @include sm{
+            padding: 0px;
+        }
+    }
+
+    .mobile-margin{
+        padding: 0px 100px;
+        @include md{
+            padding: 0px;
+        }
+        @include sm{
+            padding: 0px;
+        }
+    }
+
+}
+
+@media only screen and (max-width:1399px) {
+    body.page-template-page-ai {
+        
+        .mobile-margin,.partners-section{
+            padding: 0px;
+        }
+
+        .title-partner{
+            margin-top: 40px;
+        }
+
+        .faq-title{
+            margin-top: 30px !important;
+        }
+    }
+
+    .in-col-billing{
+        margin-top: 20px !important;
+    }
+
+    .document-subtitle{
+        margin-top: 20px;
+    }
+
+}

@@ -345,3 +345,76 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 new WOW().init();
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const headers = document.querySelectorAll(".accordion-header");
+
+  // ✅ Toggle accordion function
+  function toggleAccordion(targetAccordion) {
+      if (targetAccordion) {
+          // Close others (classic accordion)
+          document.querySelectorAll(".accordion-item").forEach(item => {
+              if (item !== targetAccordion) {
+                  item.classList.remove("active");
+                  item.querySelector(".accordion-content").style.maxHeight = null;
+              }
+          });
+
+          // Toggle current
+          const content = targetAccordion.querySelector(".accordion-content");
+          if (targetAccordion.classList.contains("active")) {
+              targetAccordion.classList.remove("active");
+              content.style.maxHeight = null;
+          } else {
+              targetAccordion.classList.add("active");
+              content.style.maxHeight = content.scrollHeight + "px";
+          }
+      }
+  }
+
+  // ✅ Make each header clickable
+  headers.forEach(header => {
+      header.addEventListener("click", function () {
+          const targetAccordion = this.closest(".accordion-item");
+          toggleAccordion(targetAccordion);
+      });
+  });
+});
+
+(function(){
+  const dropdown = document.getElementById('careerDropdown');
+  const toggle   = dropdown?.querySelector('.dropdown__toggle');
+  const menu     = dropdown?.querySelector('.dropdown__menu');
+  const options  = dropdown?.querySelectorAll('.dropdown__option');
+  const cards    = document.querySelectorAll('.career-card');
+
+  if (!toggle || !menu) return;
+
+  const openMenu  = () => { menu.classList.add('is-open');  toggle.setAttribute('aria-expanded','true');  menu.focus(); };
+  const closeMenu = () => { menu.classList.remove('is-open'); toggle.setAttribute('aria-expanded','false'); };
+
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menu.classList.contains('is-open') ? closeMenu() : openMenu();
+  });
+
+  document.addEventListener('click', (e) => { if (!dropdown.contains(e.target)) closeMenu(); });
+  menu.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeMenu(); toggle.focus(); } });
+
+  options.forEach(opt => {
+    opt.addEventListener('click', () => {
+      options.forEach(o => o.classList.remove('is-active'));
+      opt.classList.add('is-active');
+
+      const val = opt.getAttribute('data-filter');
+      dropdown.querySelector('.dropdown__label').textContent = opt.textContent.trim();
+
+      cards.forEach(card => {
+        card.style.display = (val === 'all' || card.getAttribute('data-name') === val) ? '' : 'none';
+      });
+
+      closeMenu();
+    });
+  });
+})();

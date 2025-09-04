@@ -2,8 +2,17 @@
 @import "custom/mixins";
 @import "custom/variables";
 
+@import "custom/templates/page-ai";
+@import "custom/templates/events";
+@import "custom/templates/career";
+@import "custom/templates/career-single";
+
 body {
     font-family: "Poppins", sans-serif;
+}
+
+a,img,svg,span{
+    -webkit-appearance: none;
 }
 
 img{
@@ -437,16 +446,16 @@ img{
             font-size: 26px;
         }
         @include sm {
-            font-size: 20px;
+            font-size: 35px;
         } 
                             line-height: 50px;
                         }
                     }
                     &.stat-info { 
-                        font-size: 50px;
+                        font-size: 38px;
 
         @include md {
-            font-size: 20px;
+            font-size: 35px;
         }
         @include sm {
             font-size: 15px;
@@ -460,7 +469,7 @@ img{
             font-size: 12px;
         }
         @include sm {
-            font-size: 10px;
+            font-size: 16px;
         } 
                         }
                     }
@@ -1181,13 +1190,15 @@ img{
 
 .tablet-grid {
     position: absolute;
-    top: 10%;
-    left: 4.5%;
+    top: 19%;
+    width: 73%;
+    left: 4.6%;
+    background-color: #f6f6f6;
     z-index: 20;
     display: grid;
+    padding: 30px 0px 80px 0px;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
-    margin-top: 50px;
 
         @include md {
             margin-top: 38px;
@@ -1207,7 +1218,7 @@ img{
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    width: 145px;
+    width: 142px;
     padding: 2px;
 
         @include md {
@@ -1227,6 +1238,16 @@ img{
 .tablet-btn img {
     width: 40px;
     height: 40px;
+}
+
+.tablet-bar{
+    position: absolute;
+    top: 3%;
+    border-radius: 17px;
+    left: 3.3%;
+    z-index: 20;
+    margin-bottom: 100px;
+    width: 74%; 
 }
 
 .tablet-btn span {
@@ -1560,7 +1581,7 @@ img{
 
 .custom-card {
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(34, 42, 30, 1);
+    box-shadow: 0px 0px 10.6px #222a354c;
     overflow: hidden;
     text-align: center;
     padding: 0px 20px 20px 20px;
@@ -1576,18 +1597,23 @@ img{
     border: none;
 }
 
-.custom-card .card-header:hover {
-    background-color: #F15A24;
-    transition: 0.5s;
-}
-
 .icons-consulting{
-    width: 180px;
     margin: 20px;
 }
 
+.custom-card:hover{
+    h5{
+        color: #F15A24;
+        transition: 0.5s;
+    }
+    .card-header{
+        background-color: #F15A24;
+        transition: 0.7s;
+    }
+}
+
 .custom-card .card-header {
-    background-color: #1e1e26;
+    background-color: #222A35;
     color: white;
     padding: 30px;
 
@@ -1650,15 +1676,14 @@ img{
         @include sm {
             font-size: 10px;
         }
-    color: #666;
 }
 
 .bordered-header{
     border-bottom-right-radius: 58px !important;
     border-bottom-left-radius: 58px !important;
     background-color: rgba(34, 42, 53, 1);
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 160px;
     margin: auto;
     margin-top: 0px;
 
@@ -2944,6 +2969,15 @@ img{
         color: white;
         position: relative;
     }
+
+    .tablet-bar{
+        width: 92%;
+        left: 4.3%;
+    }
+
+    .tablet-btn{
+        width: 156px;
+    }
     
     .desc-text{
         font-size: 12px;
@@ -3089,12 +3123,10 @@ img{
     }
 
     .tablet-grid{
-        left: 11.5%;
-    }
-
-    .tablet-btn{
-        width: 130px;
-        gap: 6px;
+        left: 4.6%;
+        width: 91%;
+        top: 18%;
+        padding: 30px 0 131px;
     }
 
     .career-all .row {
@@ -3224,7 +3256,14 @@ img{
 
 @media only screen and (max-width:1200px){
     .tablet-grid{
-        left: 4.5%;
+        padding: 30px 0 43px;
+        top: 17%;
+        .tablet-btn{
+            width: 126px;
+            span{
+                font-size: 9px;
+            }
+        }
     }
 }
 
@@ -3554,12 +3593,11 @@ img{
     }
 
     .tablet-grid{
-        left: 9.5%;
-    }
-
-    .tablet-btn{
-        gap: 13px;
-        width: 150px;
+        padding: 50px 0 155px;
+        top: 15%;
+        .tablet-btn{
+            width: 164px;
+        }
     }
 
     .career-b-title{
@@ -3598,11 +3636,6 @@ img{
         }
     }
 
-    .tablet-btn{
-        gap: 3px;
-        width: 115px;
-    }
-
     .logo-header {
         width: 140px;
         height: auto;
@@ -3620,7 +3653,12 @@ img{
     }
 
     .tablet-grid{
-        left: 6%;
+        padding: 30px 0 28px;
+        top: 15%;
+        gap: 12px;
+        .tablet-btn{
+            width: 122px;
+        }
     }
 
     .tablet-image{
@@ -3738,6 +3776,10 @@ img{
         margin: 0px !important;
     }
 
+    .footer-section{
+        text-align: center;
+    }
+
     .text-grad-career{
         font-size: 25px;
 
@@ -3845,6 +3887,15 @@ img{
         margin-left: 20px;
     }
 
+    .tablet-grid{
+        padding: 40px 0 84px;
+        top: 15%;
+        gap: 8px;
+        .tablet-btn{
+            width: 123px;
+        }
+    }
+
     .logo-header {
         width: 120px;
     }
@@ -3923,6 +3974,14 @@ img{
         }
     }
 
+    .asist-textes,.questions-accordion{
+        padding: 0px ;
+    }
+
+    .faq-title{
+        margin-top: 30px !important;
+    }
+
     .tablet-btn span{
         font-size: 6px;
     }
@@ -3954,10 +4013,6 @@ img{
 
     .praxis-textes{
         margin-left: 2px !important;
-    }
-
-    .tablet-grid{
-        gap: 1px;
     }
 
     .assistant-img{
@@ -3992,7 +4047,7 @@ img{
     
     .footer-logo{
         width: 150px;
-        margin-left: -35px;
+        margin-left: 30px;
     }
 
     .hero-front-page .wrapper .image-statistic .stat-box p.stat-main{
@@ -4038,6 +4093,42 @@ img{
             }
         }
     }
+}
+
+@media only screen and (max-width: 530px) {
+
+    .tablet-grid{
+        padding: 30px 0 54px;
+        top: 15%;
+        gap: 10px;
+        .tablet-btn{
+            width: 113px;
+            span{
+                font-size: 9px;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+    .tablet-grid{
+        padding: 20px 0 34px;
+        top: 15%;
+        gap: 10px;
+        .tablet-btn{
+            width: 82px;
+            span{
+                font-size: 6px;
+            }
+            img{
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
 }
 
 @media (min-width: 1200px) {
