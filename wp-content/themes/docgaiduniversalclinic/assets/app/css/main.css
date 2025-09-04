@@ -250,7 +250,7 @@ body.page-template-page-ai .document-title {
 body.page-template-page-ai .billing-part {
   position: relative;
   z-index: 2;
-  background-image: url(http://localhost:8888/wordpress/wp-content/uploads/2025/08/young-man.png);
+  background-image: url(https://stage.docgaid.de/wp-content/uploads/2025/08/young-man.png);
   filter: brightness(.5);
   padding: 100px 0 150px 0
 }

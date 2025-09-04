@@ -79,12 +79,12 @@ function custom_ai_content()
                     </div>
                 </div>
                 <div class="col-lg-5 col-12">
-                    <img loading="lazy" data-lazy="http://localhost:8888/wordpress/wp-content/uploads/2025/08/Group-890.png" src="http://localhost:8888/wordpress/wp-content/uploads/2025/08/Group-890.png" class="document-image w-100" alt="Document Image">
+                    <img loading="lazy" data-lazy="https://stage.docgaid.de/wp-content/uploads/2025/08/Group-890.png" src="https://stage.docgaid.de/wp-content/uploads/2025/08/Group-890.png" class="document-image w-100" alt="Document Image">
                 </div>
             </div>
             <div class="row justify-content-around" style="margin-top: 80px;">
                 <div class="col-lg-5 col-12">
-                    <img loading="lazy" data-lazy="http://localhost:8888/wordpress/wp-content/uploads/2025/08/Group-892.png" src="http://localhost:8888/wordpress/wp-content/uploads/2025/08/Group-892.png" class="document-image w-100" alt="Document Image">
+                    <img loading="lazy" data-lazy="https://stage.docgaid.de/wp-content/uploads/2025/08/Group-892.png" src="https://stage.docgaid.de/wp-content/uploads/2025/08/Group-892.png" class="document-image w-100" alt="Document Image">
                 </div>
                 <div class="col-lg-5 col-12">
                     <div class="in-col-documents">
